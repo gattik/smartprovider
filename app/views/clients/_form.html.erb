@@ -1,0 +1,18 @@
+<%= form_for @client do |f| %>
+
+	<div>First Name: <%= f.text_field :first_name %></div>
+	<div>Last Name: <%= f.text_field :last_name %></div>
+	<div>Health Card Number: <%= f.text_field :hcn %></div>
+	<div>Physician: <%= f.text_field :physician %></div>
+	<div>Physician Phone: <%= f.text_field :physician_phone %></div>
+	<div>Diagnosis Information: <%= f.text_area :diagnosis, rows: 6  %></div>
+	<div>Advanced Directives: <%= f.text_area :advanced_directives, rows: 6 %></div>
+	<div>Address: <%= f.text_area :address, rows: 6 %></div>
+	<div>Contact Name: <%= f.text_field :contact_name %></div>
+  <div>Contact Relationship: <%= f.text_field :contact_relationship %></div>
+  <div>Contact Phone: <%= f.text_field :contact_phone %></div>
+ 
+
+
+  <div><%= f.submit "Save" %></div>
+<% end %>
