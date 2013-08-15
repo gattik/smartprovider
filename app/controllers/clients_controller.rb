@@ -19,6 +19,9 @@ class ClientsController < ApplicationController
 	end
 
 	def edit
+		@client = Client.find(params[:id])
+   	@client.save
+
 	end
 
 	def update
