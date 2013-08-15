@@ -21,7 +21,9 @@ class UsersController < ApplicationController
   def edit
   end
 
+  
   def update
+<<<<<<< HEAD
   	@user = User.find(params[:id])
   	@user.update(user_params)
   	redirect_to users_path
@@ -31,7 +33,20 @@ class UsersController < ApplicationController
   	@user = User.find(params[:id])
   	@user.destroy
   	redirect_to users_path
+=======
+    @user = User.find(params[:id])
+    @user.update(user_params)
+    redirect_to users_path
   end
+
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+    redirect_to users_path
+>>>>>>> kat
+  end
+
+
 
 private
 

@@ -1,0 +1,7 @@
+<%= form_for @note do |f| %>
+
+ <div>Title: <%= f.text_field :title %></div>
+  <div>Description: <%= f.text_field :description %></div>
+
+  <div><%= f.submit "Save" %></div>
+<% end %>
