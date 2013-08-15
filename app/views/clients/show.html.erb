@@ -1,1 +1,19 @@
-<h1>Show.html.erb</h1>
+<h1>Client Page</h1>
+
+<h1><%= @client.first_name %></h1>
+<p><%= @client.hcn %></p>
+<p><%= @client.physician %></p>
+<p><%= @client.physician_phone %></p>
+<p><%= @client.diagnosis %></p>
+<p><%= @client.advanced_directives %></p>
+<p><%= @client.address %></p>
+<p><%= @client.contact_name %></p>
+<p><%= @client.contact_relationship %></p>
+
+
+<%= link_to 'Edit', edit_client_path(@client), method: :get, class: "btn btn-warning" %>  
+<br><br>
+
+
+<%= button_to "Back", clients_path, method: :get, class:  "btn btn-default" %> 
+

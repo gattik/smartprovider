@@ -1,5 +1,14 @@
 <h1>test</h1>
 
+<table>
+<% @clients.each do |client| %>
+
+<td class="list_description"> <dl>
+<dt><%= link_to client.first_name, client_path(client)%></dt>
+<br>
+
+<% end %> </table>
+
 <br>
 
 <%= button_to "New Client", new_client_path(@client), method: :get,class: "btn btn-primary btn-lg" %>
