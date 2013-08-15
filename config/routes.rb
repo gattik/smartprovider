@@ -1,4 +1,6 @@
 Smartprovider::Application.routes.draw do
+  resources :notes
+
   resources :clients
 
   resources :users
