@@ -28,6 +28,9 @@ class NotesControllerTest < ActionController::TestCase
   	assert_response :success
   end
 
+  
+
+
   # test "should get edit" do
   # 	get :edit, id: notes(:one).id
   # 	assert_response :success

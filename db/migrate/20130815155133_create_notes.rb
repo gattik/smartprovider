@@ -3,8 +3,9 @@ class CreateNotes < ActiveRecord::Migration
     create_table :notes do |t|
       t.string :title
       t.text :description
-      t.integer :client_id
       t.string :importance
+      t.references :user
+      t.references :client
 
       t.timestamps
     end

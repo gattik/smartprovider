@@ -5,3 +5,5 @@ class NoteTest < ActiveSupport::TestCase
   #   assert true
   # end
 end
+
+
