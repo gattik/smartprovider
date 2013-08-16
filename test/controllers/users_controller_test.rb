@@ -11,12 +11,20 @@ class UsersControllerTest < ActionController::TestCase
   	assert_response :success
   end
 
-  test "should get create" do
+  test "should create a new user with valid attributes" do
   	attributes = valid_user_attributes
   	assert_difference('User.count') do
   	  post :create, user: attributes
   	end
-  	assert_redirected_to users_path
+  	assert_redirected_to login_path
+  end
+
+  test "should NOT create a new user with invalid attributes" do
+    attributes = invalid_user_attributes
+    assert_difference('User.count', 0) do
+      post :create, user: attributes
+    end
+    assert_template :new
   end
 
   test "should get show" do
@@ -54,6 +62,15 @@ class UsersControllerTest < ActionController::TestCase
     user.destroy!
 
     raise unless User.new(attributes).valid?
+
+    return attributes
+  end
+
+  def invalid_user_attributes
+    attributes = valid_user_attributes
+    attributes[:first_name] = nil
+
+    raise if User.new(attributes).valid?
 
     return attributes
   end
