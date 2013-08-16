@@ -8,6 +8,8 @@ Smartprovider::Application.routes.draw do
   get '/login', to: 'login#new'
   post '/login', to: 'login#create'
   get '/logout', to: 'login#logout'
+
+  root 'users#new'
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
