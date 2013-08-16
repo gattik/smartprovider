@@ -5,15 +5,13 @@ one:
   last_name: MyString
   designation: MyString
   phone: MyString
-  email: MyString
-  password: MyString
-  password_confirmation: MyString
+  email: ronaldvictorino@gmail.com
+  password_digest: gibberish!
 
 two:
   first_name: MyString
   last_name: MyString
   designation: MyString
   phone: MyString
-  email: MyString
-  password: MyString
-  password_confirmation: MyString
+  email: poop
+  password_digest: gibberish!
