@@ -1,7 +1,6 @@
 class NotesController < ApplicationController
-
   def index
-  	@notes = Note.all
+    @notes = Note.all
   end
 
   def new
@@ -10,9 +9,10 @@ class NotesController < ApplicationController
 
   def create
   	@note = Note.new(note_params)
-  	@note.save
+    @note.client = @current_client
+    @note.save
 
-		redirect_to notes_path
+    redirect_to notes_path
   end
 
   def show
