@@ -11,18 +11,20 @@ class UsersControllerTest < ActionController::TestCase
   	assert_response :success
   end
 
-  test "should get create" do
-  	user = users(:one)
+  test "should create a new user with valid attributes" do
+  	attributes = valid_user_attributes
   	assert_difference('User.count') do
-  	  post :create, user: { first_name: user.first_name, last_name: user.last_name, 
-  	  	designation: user.designation, 
-  	  	phone: user.phone, 
-  	  	email: user.email,
-  	  	password: user.password, 
-  	  	password_confirmation: user.password_confirmation
-  	  }
+  	  post :create, user: attributes
   	end
-  	assert_redirected_to users_path
+  	assert_redirected_to login_path
+  end
+
+  test "should NOT create a new user with invalid attributes" do
+    attributes = invalid_user_attributes
+    assert_difference('User.count', 0) do
+      post :create, user: attributes
+    end
+    assert_template :new
   end
 
   test "should get show" do
@@ -37,14 +39,10 @@ class UsersControllerTest < ActionController::TestCase
   end
 
   test "should update user" do
-  	user = users(:one)
-	  patch :update, id: user.id, user: { first_name: user.first_name, last_name: user.last_name, 
-  	  	designation: user.designation, 
-  	  	phone: user.phone, 
-  	  	email: user.email,
-  	  	password: user.password, 
-  	  	password_confirmation: user.password_confirmation
-  	 }
+  	user = users(:two)
+    attributes = valid_user_attributes
+
+	  patch :update, id: user.id, user: attributes
   	assert_redirected_to users_path
   end
 
@@ -54,5 +52,26 @@ class UsersControllerTest < ActionController::TestCase
   		delete :destroy, id: users(:one)
   	end
   	assert_redirected_to users_path
+  end
+
+  def valid_user_attributes
+    user = users(:one)
+    attributes = user.attributes.except("id")
+    attributes[:password] = "foo"
+    attributes[:password_confirmation] = "foo"
+    user.destroy!
+
+    raise unless User.new(attributes).valid?
+
+    return attributes
+  end
+
+  def invalid_user_attributes
+    attributes = valid_user_attributes
+    attributes[:first_name] = nil
+
+    raise if User.new(attributes).valid?
+
+    return attributes
   end
 end
