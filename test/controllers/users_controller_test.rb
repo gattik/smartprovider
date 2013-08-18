@@ -27,32 +27,42 @@ class UsersControllerTest < ActionController::TestCase
     assert_template :new
   end
 
-  test "should get show" do
-  	get :show, id: users(:one).id
-
-  	assert_response :success
+  test "should not be able to get edit if user is not logged in" do
+    get :edit, id: users(:one).id
+    assert_redirected_to login_path
   end
 
-  test "should get edit" do
-  	get :edit, id: users(:one).id
-  	assert_response :success
-  end
+  #tests for if user is logged in
+    test "should get show if user is logged in" do
+      login_as(:one)
+    	get :show, id: users(:one).id
 
-  test "should update user" do
-  	user = users(:two)
-    attributes = valid_user_attributes
+    	assert_response :success
+    end
 
-	  patch :update, id: user.id, user: attributes
-  	assert_redirected_to users_path
-  end
+    test "should get edit if user is logged in" do
+      login_as(:one)
+
+    	get :edit, id: users(:one).id
+    	assert_response :success
+    end
+
+    test "should update user if user is logged in" do
+      login_as(:two)
+      user = users(:two)
+      attributes = valid_user_attributes
+  	  patch :update, id: user.id, user: attributes
+    	assert_redirected_to user_path(users(:two))
+    end
 
 
-  test "should get destroy" do
-  	assert_difference('User.count', -1) do
-  		delete :destroy, id: users(:one)
-  	end
-  	assert_redirected_to users_path
-  end
+    test "should get destroy only if the user is logged in" do
+      login_as(:one)
+    	assert_difference('User.count', -1) do
+    		delete :destroy, id: users(:one)
+    	end
+    	assert_redirected_to new_user_path
+    end
 
   def valid_user_attributes
     user = users(:one)

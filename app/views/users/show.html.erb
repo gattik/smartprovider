@@ -1,1 +1,11 @@
-<h1>Show me the user</h1>
+<div class="content">
+	<h1>Your gaddamn profile</h1>
+
+	<%= @current_user.first_name %></br></br>
+	<%= @current_user.last_name %></br></br>
+	<%= @current_user.designation %></br></br>
+	<%= @current_user.phone %></br></br>
+	<%= @current_user.email %></br></br>
+
+	<%= link_to 'Edit', edit_user_path(@current_user) %>
+</div>

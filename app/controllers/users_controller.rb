@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+
+  before_action :require_current_user, only: [:show, :edit, :update, :destroy]
+
   def index
   	@users = User.all
   end
@@ -27,13 +30,13 @@ class UsersController < ApplicationController
   def update
   	@user = User.find(params[:id])
   	@user.update(user_params)
-  	redirect_to users_path
+  	redirect_to user_path(@user)
   end
 
   def destroy
   	@user = User.find(params[:id])
   	@user.destroy
-  	redirect_to users_path
+  	redirect_to new_user_path
   end
 
 private

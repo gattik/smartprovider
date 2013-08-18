@@ -1,1 +1,17 @@
 <h1>Log in you smelly smelly but handsome man.</h1>
+
+<%= form_for @user, url: login_path do |f| %>
+  <%= flash[:error] %>
+
+  <div>
+  	<%= f.label :email %>
+  	<%= f.text_field :email %>
+  </div>
+
+  <div>
+  	<%= f.label :password %>
+  	<%= f.password_field :password %>
+  </div>
+  <div><%= f.submit "Sign in" %></div>
+<% end %>
+

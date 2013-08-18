@@ -1,4 +1,7 @@
 class ClientsController < ApplicationController
+
+	before_action :require_current_user
+
 	def index
 		@clients = Client.all 
 	end

@@ -1,17 +1,21 @@
 require 'test_helper'
 
 class NotesControllerTest < ActionController::TestCase
+  
   test "should get index" do
+    login_as(:one)
   	get :index
   	assert_response :success
   end
 
   test "should get new" do
+    login_as(:one)
   	get :new
   	assert_response :success
   end
 
   test "should get create" do
+    login_as(:one)
   	note = notes(:one)
   	assert_difference('Note.count') do
   	  post :create, note: { title: note.title, description: note.description, 
@@ -23,6 +27,7 @@ class NotesControllerTest < ActionController::TestCase
   end
 
   test "should get show" do
+    login_as(:one)
   	get :show, id: notes(:one).id
 
   	assert_response :success
