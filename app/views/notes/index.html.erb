@@ -4,6 +4,6 @@
 	<div>
 		<%= note.title %>: <%= note.created_at.strftime("%m/%d/%Y at %I:%M%p") %></br>
 		<%= note.description %></br>
-		For <%= note.client %>
+		For <%= note.client.first_name %>
 	</div>
 <% end %>

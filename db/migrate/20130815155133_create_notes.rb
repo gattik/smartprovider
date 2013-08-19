@@ -4,8 +4,8 @@ class CreateNotes < ActiveRecord::Migration
       t.string :title
       t.text :description
       t.string :importance
-      t.references :user
-      t.references :client
+      t.references :user, index: true
+      t.references :client, index: true
 
       t.timestamps
     end

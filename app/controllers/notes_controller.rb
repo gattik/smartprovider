@@ -12,7 +12,7 @@ class NotesController < ApplicationController
 
   def create
     @note = Note.new(note_params)
-    # @note.client = Client.find(params[:client_id])
+    @note.client = Client.find(params[:client_id])
     @note.user = @current_user
     @note.save
 

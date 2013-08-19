@@ -5,6 +5,10 @@ Smartprovider::Application.routes.draw do
 
   resources :users
 
+  resources :clients do
+    resources :notes
+  end
+
   get '/login', to: 'login#new'
   post '/login', to: 'login#create'
   get '/logout', to: 'login#logout'

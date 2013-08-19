@@ -26,4 +26,10 @@
 <%= button_to "Back", clients_path, method: :get, class:  "btn btn-default" %> 
 </br></br>
 
-<%= button_to "Add new note", new_note_path, method: :get, class: "btn btn-default" %>
+<h2>Add new note</h2>
+
+<%= form_for [@client, Note.new] do |f| %>
+	<div>Title: <%= f.text_field :title %></div>
+  <div>Description: <%= f.text_area :description, rows: 6 %></div>
+  <%= f.submit "Add Note" %>
+<% end %>
