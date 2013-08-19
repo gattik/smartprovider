@@ -11,11 +11,12 @@ class NotesController < ApplicationController
   end
 
   def create
-  	@note = Note.new(note_params)
-    @note.client = @current_client
+    @note = Note.new(note_params)
+    # @note.client = Client.find(params[:client_id])
+    @note.user = @current_user
     @note.save
 
-    redirect_to notes_path
+    redirect_to client_path(@note.client)
   end
 
   def show

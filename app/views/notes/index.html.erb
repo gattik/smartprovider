@@ -1,1 +1,9 @@
-<h1>Index page</h1>
+<h1>Index page for all notes</h1>
+
+<% @notes.each do |note| %>
+	<div>
+		<%= note.title %>: <%= note.created_at.strftime("%m/%d/%Y at %I:%M%p") %></br>
+		<%= note.description %></br>
+		For <%= note.client %>
+	</div>
+<% end %>

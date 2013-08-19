@@ -10,11 +10,20 @@
 <p><%= @client.contact_name %></p>
 <p><%= @client.contact_relationship %></p>
 
+<% @client.notes.each do |note| %>
+	</br></br>
+	<div>
+		<%= note.title %>: <%= note.created_at.strftime("%m/%d/%Y at %I:%M%p") %></br>
+		<%= note.description %>
+	</div>
+<% end %>
+
 
 <%= link_to 'Edit', edit_client_path(@client), method: :get, class: "btn btn-warning" %>  
 <br><br>
 
 
 <%= button_to "Back", clients_path, method: :get, class:  "btn btn-default" %> 
+</br></br>
 
-
+<%= button_to "Add new note", new_note_path, method: :get, class: "btn btn-default" %>

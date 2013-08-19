@@ -4,6 +4,7 @@ class NotesControllerTest < ActionController::TestCase
   
   test "should get index" do
     login_as(:one)
+    session[:client_id] = clients(:one).id
   	get :index
   	assert_response :success
   end
@@ -16,14 +17,14 @@ class NotesControllerTest < ActionController::TestCase
 
   test "should get create" do
     login_as(:one)
-  	note = notes(:one)
+    session[:client_id] = clients(:one).id
   	assert_difference('Note.count') do
-  	  post :create, note: { title: note.title, description: note.description, 
-  	  	client_id: note.client_id, 
-  	  	importance: note.importance
-  	  }
+  	  post :create, note: { title: "foo", description: "bar" }
   	end
-  	assert_redirected_to notes_path
+    
+    note = assigns(:note)
+    # assert note.client
+  	assert_redirected_to client_path(note.client)
   end
 
   test "should get show" do
