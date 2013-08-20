@@ -1,5 +1,8 @@
 Smartprovider::Application.routes.draw do
+
   resources :follow_ups
+
+  resources :vitals
 
   resources :notes
 
