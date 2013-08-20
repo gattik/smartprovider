@@ -33,3 +33,5 @@
   <div>Description: <%= f.text_area :description, rows: 6 %></div>
   <%= f.submit "Add Note" %>
 <% end %>
+
+<%= link_to "Add New Note", new_client_note_path(@client) %>

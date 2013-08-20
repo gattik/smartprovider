@@ -1,16 +1,38 @@
-<h1>Log in you smelly smelly but handsome man.</h1>
+<div class="container">
+  <div class="hero-unit">
+    <h1>
+      Welcome back!
+    </h1>
+    <p>
+      SmartProvider is here to help you
+    </p>
+  </div>
+  <br>
+  <div class="container">
 
-<%= form_for @user, url: login_path do |f| %>
+  <%= form_for @user, url: login_path do |f| %>
   <%= flash[:error] %>
 
   <div>
-  	<%= f.label :email %>
-  	<%= f.text_field :email %>
+    <%= f.label :email %>
+    <br>
+    <%= f.text_field :email %>
   </div>
 
   <div>
-  	<%= f.label :password %>
-  	<%= f.password_field :password %>
+    <%= f.label :password %>
+    <br>
+    <%= f.password_field :password %>
   </div>
-  <div><%= f.submit "Sign in" %></div>
+  <br>
+  <div><%= f.submit "Login", class: "btn btn-primary" %></div>
 <% end %>
+
+<br>
+  <hr>
+  <div class="footer">
+    <p>
+      © SmartProvider 2013
+    </p>
+  </div>
+</div>
