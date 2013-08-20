@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
 	has_many :clients
 	has_many :notes
+  has_many :follow_ups
 
 	has_secure_password validations: true
 
