@@ -9,16 +9,17 @@ class NotesControllerTest < ActionController::TestCase
   	assert_response :success
   end
 
-  test "should get create a new note" do
+  test "should create a new note" do
     login_as(:one)
-    session[:client_id] = clients(:one).id
+    client = clients(:one)
 
   	assert_difference('Note.count') do
-  	  post :create, note: { title: "foo", description: "bar" }
+  	  post :create, { client_id: client.id, note: { title: "foo", description: "bar" } }
   	end
     
     note = assigns(:note)
     assert note.client
+    assert_equal client.id, note.client.id
   	assert_redirected_to client_path(note.client)
   end
 
