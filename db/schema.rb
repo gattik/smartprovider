@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 20130819175225) do
   create_table "clients", force: true do |t|
     t.string   "first_name"
     t.string   "last_name"
+    t.date     "date_of_birth"
     t.string   "hcn"
     t.string   "physician"
     t.string   "physician_phone"

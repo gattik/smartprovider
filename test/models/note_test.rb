@@ -13,15 +13,6 @@ class NoteTest < ActiveSupport::TestCase
   	note = Note.new(description: "")
   	assert !note.valid? 
   end
-
-
-
-  # test "note should get user's id (created_by)" do
-  #   u1 = users(:one)
-
-  # 	note = notes(:one)
-  # 	assert_equal note.user_id, u1.id
-  # end
 end
 
 
