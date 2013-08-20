@@ -9,7 +9,7 @@ one:
   completed: true
   user_id: 1
   note: notes(:one)
-  assigned_user: 1
+  assigned_user_id: 1
 
 two:
   task: task two

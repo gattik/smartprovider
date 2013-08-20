@@ -8,7 +8,7 @@ class FollowUpsController < ApplicationController
   end
 
   def create
-    @follow_up = FollowUp.new(params[:follow_up_params])
+    @follow_up = FollowUp.new(follow_up_params)
     @follow_up.note = Note.find(params[:note_id])
     @follow_up.save
     redirect_to client_path(@follow_up.note.client_id)
@@ -23,7 +23,7 @@ class FollowUpsController < ApplicationController
   private
 
   def follow_up_params
-    params.require(:follow_up).permit(:task, :assigned_user)
+    params.require(:follow_up).permit(:task, :assigned_user_id)
   end
 
 end

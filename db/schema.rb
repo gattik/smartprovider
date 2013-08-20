@@ -11,12 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130819175225) do
+ActiveRecord::Schema.define(version: 20130820194013) do
 
   create_table "clients", force: true do |t|
     t.string   "first_name"
     t.string   "last_name"
     t.date     "date_of_birth"
+    t.string   "gender"
     t.string   "hcn"
     t.string   "physician"
     t.string   "physician_phone"
@@ -32,8 +33,8 @@ ActiveRecord::Schema.define(version: 20130819175225) do
 
   create_table "follow_ups", force: true do |t|
     t.string   "task"
-    t.boolean  "completed",     default: false
-    t.integer  "assigned_user"
+    t.boolean  "completed",        default: false
+    t.integer  "assigned_user_id"
     t.integer  "user_id"
     t.integer  "note_id"
     t.datetime "created_at"
