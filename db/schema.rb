@@ -39,16 +39,14 @@ ActiveRecord::Schema.define(version: 20130815155133) do
     t.datetime "updated_at"
   end
 
-  add_index "notes", ["client_id"], name: "index_notes_on_client_id"
-  add_index "notes", ["user_id"], name: "index_notes_on_user_id"
-
   create_table "users", force: true do |t|
     t.string   "first_name"
     t.string   "last_name"
     t.string   "designation"
     t.string   "phone"
     t.string   "email"
-    t.string   "password_digest"
+    t.string   "password"
+    t.string   "password_confirmation"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
