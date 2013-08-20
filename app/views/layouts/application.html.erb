@@ -6,20 +6,9 @@
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-<div class="navbar navbar-fixed-top">
-  <ul class="nav navbar-nav">
-    <li class="navbar-brand">Craigslist App</li>
-    <li><%= link_to "Home", user_path(@current_user) %></li>
-    <li><%= link_to "Clients", clients_path %></li>
-    <li><%= link_to "Notes", notes_path %></li>
-  </ul>
-  <form class="navbar-form pull-right">
-    <%= link_to "Log in", login_path, class:"btn btn-default" %>
-  </form>
-</div>
+
 <div class="content">
   <%= yield %>
 </div>
-</body>
+
 </html>
