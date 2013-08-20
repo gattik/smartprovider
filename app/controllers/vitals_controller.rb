@@ -1,18 +1,20 @@
 class VitalsController < ApplicationController
-	class NotesController < ApplicationController
 
   before_action :require_current_user
 
   def index
-    @vitals = Vital.all
+    @client = Client.find(params[:client_id])
+
+    @vital = @client.vitals #Vital.find(params[:id])
   end
 
   def new
   	@vital = Vital.new
+    @client = Client.find(params[:client_id])
   end
 
   def create
-    @vital = Vital.new(note_params)
+    @vital = Vital.new(vital_params)
     @vital.client = Client.find(params[:client_id])
     @vital.user = @current_user
     @vital.save
@@ -36,7 +38,6 @@ class VitalsController < ApplicationController
 private
 
   def vital_params
-  	params.require(:vital).permit(:weight, :height, :systolic, :diastolic, :beats, :beats_location, :beats_condition, :blood_sugar, :bs_condition, :breaths, :breaths_condition, :breaths_description, :temperature, :temp_description, :client_id, :user_id)
+  	params.require(:vital).permit(:weight, :height, :systolic, :diastolic, :beats, :beats_location, :beats_condition, :blood_sugar, :bs_condition, :breaths, :breaths_condition, :breaths_description, :temperature, :client_id, :user_id)
   end
-end
 end

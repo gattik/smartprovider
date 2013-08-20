@@ -1,0 +1,24 @@
+<!--Navbar div -->
+<div class="navbar navbar-inverse navbar-fixed-top">
+	<ul class="nav navbar-nav">
+	<li class="navbar-brand" style="
+	padding-left: 40px;
+	padding-right: 40px;">SmartProvider</li>
+ 		<li><%= link_to "My Account", user_path(@current_user) %></li>
+	</ul>
+</div>
+  <div class="container" >
+ 
+  	<ul class="nav nav-tabs">
+      <li><%= link_to "Notes", client_path(@client) %></li>
+      <li><%= link_to "Vitals", new_client_vital_path(@client) %></li>
+      <li class="active"><a href="#">Vitals History</a></li>
+    </ul>
+      <h3>Vitals Hostory</h3>
+       
+      <br>
+      </p>
+      <hr>
+    </div>
+  </div>
+	<div>

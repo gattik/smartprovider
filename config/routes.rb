@@ -2,16 +2,13 @@ Smartprovider::Application.routes.draw do
 
   resources :follow_ups
 
-  resources :vitals
-
   resources :notes
-
-  resources :clients
 
   resources :users
 
   resources :clients do
     resources :notes
+    resources :vitals
   end
 
   get '/login', to: 'login#new'
