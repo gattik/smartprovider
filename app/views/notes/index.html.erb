@@ -1,9 +1,80 @@
-<h1>Index page for all notes</h1>
+  <!--Navbar div -->
+<div class="navbar navbar-inverse navbar-fixed-top">
+  <ul class="nav navbar-nav">
+
+  	<li class="navbar-brand" style="
+    padding-left: 40px;
+    padding-right: 40px;">SmartProvider</li>
+    <li><%= link_to "New Client", new_client_path %></li>
+     <li><%= link_to "My Account", user_path(@user) %></li>
+   </ul>
+  
+</div>
+<div class="container">
+	<h1>
+		Latest Activity
+	</h1>
+	<p>
+		What is going on with your clients
+	</p>
+	<div class="row-fluid">
+		<div class="span8">
+			<h3>
+				Notes
+			</h3>
+			<table class="table">
 
 <% @notes.each do |note| %>
 	<div>
-		<%= note.title %>: <%= note.created_at.strftime("%m/%d/%Y at %I:%M%p") %></br>
-		<%= note.description %></br>
-		For <%= note.client.first_name %>
+
+				<tbody>
+					<tr>
+						<td>
+							Client
+							<br>
+							<%= note.client.first_name %>
+						</td>
+						<td>
+							Title
+							<br>
+							<%= note.title %>
+						</td>
+						<td>
+							Note
+							<br>
+							<%= note.description %>
+						</td>
+						<td>
+							Date
+							<br>
+							<%= note.created_at.strftime("%m/%d/%Y at %I:%M%p") %>
+						</td>
+					</tr>
+				</tbody>
+			</div>
+			<% end %>
+			</table>
+		</div>
+		<div class="span4">
+			<h3>
+				Follow-ups
+			</h3>
+			<label class="checkbox">
+				<input type="checkbox">
+				Remember me
+			</label>
+		</div>
 	</div>
-<% end %>
+	<hr>
+	<div class="row-fluid pull-right">
+	</div>
+	<hr>
+	<div class="footer">
+		<p>
+			© SmartProvider 2013
+		</p>
+	</div>
+</div>
+<!-- /container -->
+
+

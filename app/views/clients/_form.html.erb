@@ -1,15 +1,51 @@
+<!--Navbar div -->
+<div class="navbar navbar-inverse navbar-fixed-top">
+  <ul class="nav navbar-nav">
+
+  	<li class="navbar-brand" style="
+    padding-left: 40px;
+    padding-right: 40px;">SmartProvider</li>
+    <li><%= link_to "Feed", notes_path %></li>
+     <li><%= link_to "My Account", user_path(@user) %></li>
+   </ul>
+  
+</div>
+
 <%= form_for @client do |f| %>
 
-	<div>First Name: <%= f.text_field :first_name %></div>
-	<div>Last Name: <%= f.text_field :last_name %></div>
-	<div>Health Card Number: <%= f.text_field :hcn %></div>
-	<div>Physician: <%= f.text_field :physician %></div>
-	<div>Physician Phone: <%= f.text_field :physician_phone %></div>
-	<div>Diagnosis Information: <%= f.text_area :diagnosis, rows: 6  %></div>
-	<div>Advanced Directives: <%= f.text_area :advanced_directives, rows: 6 %></div>
-	<div>Address: <%= f.text_area :address, rows: 6 %></div>
-	<div>Contact Name: <%= f.text_field :contact_name %></div>
-  <div>Contact Relationship: <%= f.text_field :contact_relationship %></div>
-  <div>Contact Phone: <%= f.text_field :contact_phone %></div>
-  <div><%= f.submit "Save" %></div>
+	<div>First Name: 
+		<br>
+		<%= f.text_field :first_name %></div>
+	<div>Last Name: 
+		<br>
+		<%= f.text_field :last_name %></div>
+	<div>Health Card Number:
+		<br>
+	  <%= f.text_field :hcn %></div>
+	<div>Physician: 
+		<br>
+		<%= f.text_field :physician %></div>
+	<div>Physician Phone: 
+		<br>
+		<%= f.text_field :physician_phone %></div>
+	<div>Diagnosis Information: 
+		<br>
+		<%= f.text_area :diagnosis %></div>
+	<div>Advanced Directives: 
+		<br>
+		<%= f.text_area :advanced_directives %></div>
+	<div>Address: 
+		<br>
+		<%= f.text_area :address %></div>
+	<div>Contact Name: 
+		<br>
+		<%= f.text_field :contact_name %></div>
+  <div>Contact Relationship: 
+  	<br>
+  	<%= f.text_field :contact_relationship %></div>
+  <div>Contact Phone: 
+  	<br>
+  	<%= f.text_field :contact_phone %></div>
+  	<br>
+  <div><%= f.submit "Save", class: "btn btn-primary" %></div>
 <% end %>
