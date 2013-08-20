@@ -1,9 +1,49 @@
-	<h1>Your gaddamn profile</h1>
 
-	<%= @current_user.first_name %></br></br>
-	<%= @current_user.last_name %></br></br>
-	<%= @current_user.designation %></br></br>
-	<%= @current_user.phone %></br></br>
-	<%= @current_user.email %></br></br>
 
-	<%= link_to 'Edit', edit_user_path(@current_user) %>
+	
+
+	<!--Navbar div -->
+<div class="navbar navbar-inverse navbar-fixed-top">
+	<ul class="nav navbar-nav">
+	<li class="navbar-brand" style="
+	padding-left: 40px;
+	padding-right: 40px;">SmartProvider</li>
+		<li><%= link_to "Feed", notes_path %></li>
+	</ul>
+</div>
+
+<div class="container" >
+  <h1> <%= @user.first_name %> </h1>
+
+  <p>First Name: <%= @current_user.first_name %></p>
+	<p>Last Name: <%= @current_user.last_name %></p>
+	<p>Designation: <%= @current_user.designation %></p>
+	<p>Phone: <%= @current_user.phone %></p>
+	<p>Email: <%= @current_user.email %></p>
+
+	<%= button_to 'Edit', edit_user_path(@current_user), method: :get, class: "btn btn-success btn-small" %> <br>
+
+  <div class="row-fluid">
+      	<div class="span6">
+          <h4>Recent Notes by <%= @user.first_name %></h4>
+				  <table class="table" style="width:70%; float:left;">
+					  <tbody>
+							<tr>
+								<td><b>Client<b></td>
+								<td><b>Title<b></td>
+								<td><b>Note<b></td>
+								<td><b>Date<b></td>
+							</tr>
+							<% @user.notes.each do |note| %>
+							<tr>
+								<td><%= link_to note.client.first_name, client_path(note.client) %></td>
+								<td><%= note.title %></td>
+								<td style="width:400px;"><%= note.description %></td>
+								<td><%= note.created_at.strftime("%m/%d/%Y at %I:%M%p") %></td>
+							</tr>
+							<% end %>
+					  </tbody>
+				  </table>
+			  </div>          
+      </div>
+</div>
