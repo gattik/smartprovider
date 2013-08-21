@@ -64,7 +64,7 @@ class ClientsControllerTest < ActionController::TestCase
 
   def valid_client_attributes
     client = clients(:one)
-    attributes = client.attributes.except("id", "physician", "physician_phone", "advanced_directives", "contact_phone", "contact_relationship")
+    attributes = client.attributes.except("id")
     client.destroy!
 
     raise unless Client.new(attributes).valid?

@@ -12,7 +12,7 @@ class ClientsController < ApplicationController
 
 	def create
 		@client = Client.new(client_params)
-		@date_of_birth = params[:date_of_birth]
+		# @date_of_birth = params[:date_of_birth]
 		@client.save
 
 		redirect_to clients_path
@@ -45,6 +45,6 @@ class ClientsController < ApplicationController
 	private
 
 	def client_params
-		params.require(:client).permit(:first_name, :last_name, :date_of_birth, :hcn, :physician, :physician_phone, :diagnosis, :advanced_directives, :address, :contact_name, :contact_phone, :contact_relationship)
+		params.require(:client).permit(:first_name, :last_name, :date_of_birth, :gender, :hcn, :physician, :physician_phone, :diagnosis, :advanced_directives, :address, :contact_name, :contact_phone, :contact_relationship)
 	end
 end 
