@@ -1,37 +1,79 @@
-<h1>Client Page</h1>
-
-<h1><%= @client.first_name %></h1>
-<p><%= @client.hcn %></p>
-<p><%= @client.physician %></p>
-<p><%= @client.physician_phone %></p>
-<p><%= @client.diagnosis %></p>
-<p><%= @client.advanced_directives %></p>
-<p><%= @client.address %></p>
-<p><%= @client.contact_name %></p>
-<p><%= @client.contact_relationship %></p>
-
-<% @client.notes.each do |note| %>
-	</br></br>
+<!--Navbar div -->
+<div class="navbar navbar-inverse navbar-fixed-top">
+	<ul class="nav navbar-nav">
+	<li class="navbar-brand" style="
+	padding-left: 40px;
+	padding-right: 40px;">SmartProvider</li>
+		<li><%= link_to "Feed", notes_path %></li>
+ 		<li><%= link_to "My Account", user_path(@current_user) %></li>
+	</ul>
+</div>
+  <div class="container" >
+  <h1> <%= @client.first_name %> </h1>
+  	<ul class="nav nav-tabs">
+      <li class="active"><a href="#">Notes</a></li>
+      <li><%= link_to "Vitals", new_client_vital_path(@client) %></li>
+      <li><a href="#">Vitals History</a></li>
+    </ul>
+  <div class="row-fluid">
+    <div class="span6" style="width:70%; float:left;">
+      <h3>Notes</h3>
+        <label class="control-label">Add a new note:</label>
+        <p> <%= form_for [@client, Note.new] do |f| %>
+				<div> Title: <br> <%= f.text_field :title%></div>
+			  <div> Description: <br> <%= f.text_area :description, rows: 4, cols: 120 %></div> <br>
+			   <%= f.submit "Add Note", class: "btn btn-small btn-primary" %>
+			<% end %>
+      <br>
+      </p>
+      <hr>
+    	<div class="row-fluid">
+      	<div class="span6">
+          <h4>Recent Notes</h4>
+				  <table class="table" style="width:70%; float:left;">
+					  <tbody>
+							<tr>
+								<td><b>Title<b></td>
+								<td><b>Note<b></td>
+								<td><b>Date<b></td>
+							</tr>
+							<% @client.notes.each do |note| %>
+							<tr>
+								<td><%= note.title %></td>
+								<td style="width:400px;"><%= note.description %></td>
+								<td><%= note.created_at.strftime("%m/%d/%Y at %I:%M%p") %></td>
+							</tr>
+							<% end %>
+					  </tbody>
+				  </table>
+			  </div>          
+      </div>
+    </div>
+  </div>
 	<div>
-		<%= note.title %>: <%= note.created_at.strftime("%m/%d/%Y at %I:%M%p") %></br>
-		<%= note.description %>
+	<div class="span4" style="float: right;">
+	  <h3>Client Info</h3>
+			<p><%= @client.hcn %></p>
+			<p><%= @client.physician %></p>
+			<p><%= @client.physician_phone %></p>
+			<p><%= @client.diagnosis %></p>
+			<p><%= @client.advanced_directives %></p>
+			<p><%= @client.address %></p>
+			<p><%= @client.contact_name %></p>
+			<p><%= @client.contact_relationship %></p>
+	    <img src="https://s3.amazonaws.com/jetstrap-site/images/website/index/what_icon.png"
+	    class="pull-right">
+	    <%= link_to 'Edit', edit_client_path(@client), method: :get, class: "btn btn-small btn-success" %>
+		    <label class="checkbox">
+		  <div>
+		    <b class="text-left">Follow-ups</b>
+		  </div>
+		  <input type="checkbox">Remember me</label>
+		    <label class="checkbox">
+		  <input type="checkbox">Remember me</label>
+		    <hr>
+		  <div>
+		    <b>Recent Vitals</b>
+		  </div>
 	</div>
-<% end %>
-
-
-<%= link_to 'Edit', edit_client_path(@client), method: :get, class: "btn btn-warning" %>  
-<br><br>
-
-
-<%= button_to "Back", clients_path, method: :get, class:  "btn btn-default" %> 
-</br></br>
-
-<h2>Add new note</h2>
-
-<%= form_for [@client, Note.new] do |f| %>
-	<div>Title: <%= f.text_field :title %></div>
-  <div>Description: <%= f.text_area :description, rows: 6 %></div>
-  <%= f.submit "Add Note" %>
-<% end %>
-
-<%= link_to "Add New Note", new_client_note_path(@client) %>
+	    

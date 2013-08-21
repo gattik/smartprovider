@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  weight: MyString
+  height: MyString
+  systolic: MyString
+  diastolic: MyString
+  beats: MyString
+  beats_location: MyString
+  beats_condition: MyString
+  blood_sugar: MyString
+  bs_condition: MyString
+  breaths: MyString
+  breaths_condition: MyString
+  breaths_description: MyString
+  temperature: MyString
+
+two:
+  weight: MyString
+  height: MyString
+  systolic: MyString
+  diastolic: MyString
+  beats: MyString
+  beats_location: MyString
+  beats_condition: MyString
+  blood_sugar: MyString
+  bs_condition: MyString
+  breaths: MyString
+  breaths_condition: MyString
+  breaths_description: MyString
+  temperature: MyString
