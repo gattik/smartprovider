@@ -4,7 +4,6 @@ class VitalsController < ApplicationController
 
   def index
     @client = Client.find(params[:client_id])
-
     @vital = @client.vitals #Vital.find(params[:id])
   end
 
@@ -37,6 +36,6 @@ class VitalsController < ApplicationController
 private
 
   def vital_params
-  	params.require(:vital).permit(:weight, :height, :systolic, :diastolic, :beats, :beats_location, :beats_condition, :blood_sugar, :bs_condition, :breaths, :breaths_condition, :breaths_description, :temperature, :client_id, :user_id)
+  	params.require(:vital).permit(:weight, :height, :systolic, :diastolic, :beats, :beats_location, :beats_condition, :blood_sugar, :bs_condition, :breaths, :breaths_condition, :breaths_description, :temperature, :client_id)
   end
 end

@@ -4,8 +4,8 @@ class NotesControllerTest < ActionController::TestCase
   
   test "should get index" do
     login_as(:one)
-    puts "client = #{clients(:one).inspect}"
-    puts "note = #{notes(:one).inspect}"
+    # puts "client = #{clients(:one).inspect}"
+    # puts "note = #{notes(:one).inspect}"
     session[:client_id] = clients(:one).id
   	get :index
   	assert_response :success

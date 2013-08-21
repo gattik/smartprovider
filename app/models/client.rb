@@ -3,6 +3,8 @@ class Client < ActiveRecord::Base
 	has_many :notes
 	has_many :vitals
 
+	validates :first_name, :last_name, :date_of_birth, :gender, :hcn, :diagnosis, :address, :contact_name, presence: true
+
   date_of_birth =
    {"name"=>"Birthday",
     "date(1i)"=>"2012",

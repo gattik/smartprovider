@@ -6,12 +6,14 @@ class NoteTest < ActiveSupport::TestCase
 
    test "note title can't be blank" do
   	note = Note.new(title: "")
-  	assert !note.valid? 
+  	assert note.invalid?
+    assert note.errors[:title].any?
   end
 
   test "note description can't be blank" do
   	note = Note.new(description: "")
-  	assert !note.valid? 
+  	assert note.invalid?
+    assert note.errors[:description].any?
   end
 end
 
