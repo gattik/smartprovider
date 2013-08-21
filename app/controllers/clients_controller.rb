@@ -12,7 +12,6 @@ class ClientsController < ApplicationController
 
 	def create
 		@client = Client.new(client_params)
-		# @date_of_birth = params[:date_of_birth]
 		@client.save
 
 		redirect_to clients_path

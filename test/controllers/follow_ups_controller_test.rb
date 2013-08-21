@@ -34,11 +34,11 @@ class FollowUpsControllerTest < ActionController::TestCase
   test "should update" do
     login_as(:one)
     note = notes(:one)
-    post :create, { note_id: note.id, follow_up: { task: "Some valid task" } }
+    post :create, { note_id: note.id, follow_up: { task: "Some valid task", assigned_user_id: 1 } }
 
     follow_up = assigns(:follow_up)
 
-    patch :update, id: follow_up.id, follow_up: { completed: true } 
+    patch :update, id: follow_up.id, follow_up: { completed: true }
 
     assert_redirected_to client_path(follow_up.note.client_id)
   end

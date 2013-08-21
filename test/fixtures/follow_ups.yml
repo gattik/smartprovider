@@ -6,9 +6,9 @@
 #
 one: 
   task: task one
-  completed: true
+  completed: false
   user_id: 1
-  note: notes(:one)
+  note_id: notes(:one)
   assigned_user_id: 1
 
 two:
