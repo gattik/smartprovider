@@ -22,11 +22,9 @@
   <div>Date of Birth: 
     <br>
     <%= f.date_select :date_of_birth, start_year: 1900 %></div>
-  <div>Health Card Number:
-    <br>
   <div>Gender: 
 		<br>
-		<%=  f.select(:gender,[['male', 'male'], ['female', 'female']]) %></div>
+		<%=  f.select(:gender,[['Male', 'Male'], ['Female', 'Female']]) %></div>
 	<div>Health Card Number:
 		<br>
 	  <%= f.text_field :hcn %></div>
