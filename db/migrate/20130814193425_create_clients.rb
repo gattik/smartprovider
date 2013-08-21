@@ -4,6 +4,7 @@ class CreateClients < ActiveRecord::Migration
       t.string :first_name
       t.string :last_name
       t.date :date_of_birth
+      t.string :gender
       t.string :hcn
       t.string :physician
       t.string :physician_phone

@@ -3,8 +3,9 @@ require 'test_helper'
 class NotesControllerTest < ActionController::TestCase
   
   test "should get index" do
-    skip
     login_as(:one)
+    puts "client = #{clients(:one).inspect}"
+    puts "note = #{notes(:one).inspect}"
     session[:client_id] = clients(:one).id
   	get :index
   	assert_response :success
