@@ -1,9 +1,7 @@
 require 'test_helper'
 
 class ClientTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+
   test "client first_name cannot be blank" do
   	client = Client.new(first_name: "")
   	assert client.invalid?

@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20130821202910) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+ActiveRecord::Schema.define(version: 20130820194013) do
 
   create_table "clients", force: true do |t|
     t.string   "first_name"
@@ -66,6 +67,7 @@ ActiveRecord::Schema.define(version: 20130821202910) do
     t.string   "phone"
     t.string   "email"
     t.string   "password_digest"
+    t.string   "username"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
