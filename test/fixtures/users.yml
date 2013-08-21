@@ -7,6 +7,7 @@ one:
   phone: MyString
   email: ronaldvictorino@gmail.com
   password_digest: gibberish!
+  username: validuser
 
 two:
   first_name: MyString
@@ -15,3 +16,4 @@ two:
   phone: MyString
   email: onaldvictorino@gmail.com
   password_digest: gibberish!
+  username: otheruser
