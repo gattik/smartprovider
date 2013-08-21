@@ -16,7 +16,6 @@ class VitalsController < ApplicationController
   def create
     @vital = Vital.new(vital_params)
     @vital.client = Client.find(params[:client_id])
-    @vital.user = @current_user
     @vital.save
 
     redirect_to client_path(@vital.client)

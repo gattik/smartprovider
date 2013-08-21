@@ -13,7 +13,7 @@
   	<ul class="nav nav-tabs">
       <li class="active"><a href="#">Notes</a></li>
       <li><%= link_to "Vitals", new_client_vital_path(@client) %></li>
-      <li><a href="#">Vitals History</a></li>
+      <li><%= link_to "Vitals History", client_vitals_path(@client) %></li>
     </ul>
   <div class="row-fluid">
     <div class="span6" style="width:70%; float:left;">
@@ -53,14 +53,15 @@
 	<div>
 	<div class="span4" style="float: right;">
 	  <h3>Client Info</h3>
-			<p><%= @client.hcn %></p>
-			<p><%= @client.physician %></p>
-			<p><%= @client.physician_phone %></p>
-			<p><%= @client.diagnosis %></p>
-			<p><%= @client.advanced_directives %></p>
-			<p><%= @client.address %></p>
-			<p><%= @client.contact_name %></p>
-			<p><%= @client.contact_relationship %></p>
+			<p><b>Health Card: </b><%= @client.hcn %></p>
+			<p><b>Physician: </b><%= @client.physician %></p>
+			<p><b>Physician Phone: </b><%= @client.physician_phone %></p>
+			<p><b>Diagnosis: </b><%= @client.diagnosis %></p>
+			<p><b>Advanced Directives: </b><%= @client.advanced_directives %></p>
+			<p><b>Address: </b><%= @client.address %></p>
+			<p><b>Contact: </b><%= @client.contact_name %></p>
+			<p><b>Contact Relationship: </b><%= @client.contact_relationship %></p>
+			<p><b>Contact Phone: </b><%= @client.contact_phone %></p>
 	    <img src="https://s3.amazonaws.com/jetstrap-site/images/website/index/what_icon.png"
 	    class="pull-right">
 	    <%= link_to 'Edit', edit_client_path(@client), method: :get, class: "btn btn-small btn-success" %>
@@ -72,8 +73,12 @@
 		    <label class="checkbox">
 		  <input type="checkbox">Remember me</label>
 		    <hr>
-		  <div>
-		    <b>Recent Vitals</b>
+		  <h4>Recent Vitals</h4>
+		  <div><% @client.vitals.each do |vital| %>
+								<p><b>Weight: </b><%= vital.weight %></p>
+								
+							<% end %>
+
 		  </div>
 	</div>
 	    
