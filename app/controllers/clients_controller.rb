@@ -24,7 +24,6 @@ class ClientsController < ApplicationController
 	def edit
 		@client = Client.find(params[:id])
    	@client.save
-
 	end
 
 	def update
@@ -38,8 +37,6 @@ class ClientsController < ApplicationController
 		@client.destroy
 		redirect_to clients_path
 	end
-
-
 
 	private
 
