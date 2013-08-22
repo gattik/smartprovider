@@ -8,7 +8,6 @@ class ClientsControllerTest < ActionController::TestCase
 
     get :new
     assert_redirected_to login_path
-
   end
 
   test "should show all clients" do

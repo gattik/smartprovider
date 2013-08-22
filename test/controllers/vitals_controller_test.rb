@@ -2,25 +2,21 @@ require 'test_helper'
 
 class VitalsControllerTest < ActionController::TestCase
  require 'test_helper'
-  
-  test "should get index" do
-  	skip
-    login_as(:one)
-    session[:client_id] = clients(:one).vitals
-  	get :index
-  	assert_response :success
+
+  test "should not be able to do anything if not logged in" do
+    skip
+    get :index
+    assert_redirected_to login_path
+    get :new
+    assert_redirected_to login_path
   end
 
-
-
-  test "should get inget" do
+  test "should get index" do
     login_as(:one)
     session[:client_id] = clients(:one).id
   	get :index, id: vitals(:one).id
-
   	assert_response :success
   end
-
 
   test "should create a new vital" do
     login_as(:one)

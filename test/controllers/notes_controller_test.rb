@@ -2,10 +2,16 @@ require 'test_helper'
 
 class NotesControllerTest < ActionController::TestCase
   
+  test "should not be able to do anything if not logged in" do
+    get :index
+    assert_redirected_to login_path
+
+    get :new
+    assert_redirected_to login_path
+  end
+  
   test "should get index" do
     login_as(:one)
-    # puts "client = #{clients(:one).inspect}"
-    # puts "note = #{notes(:one).inspect}"
     session[:client_id] = clients(:one).id
   	get :index
   	assert_response :success

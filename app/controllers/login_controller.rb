@@ -1,5 +1,6 @@
 class LoginController < ApplicationController
-	def new
+	
+  def new
 		@user = User.new
 	end
 
@@ -10,7 +11,7 @@ class LoginController < ApplicationController
       session[:user_id] = @user.id
     	redirect_to user_path(@user)
     else
-    	flash[:error] = "You stupid fuck you can't even type correctly"
+    	flash[:error] = "Invalid Login"
     	redirect_to login_path
     end
   end
