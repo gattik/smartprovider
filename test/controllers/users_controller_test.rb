@@ -2,6 +2,7 @@ require 'test_helper'
 
 class UsersControllerTest < ActionController::TestCase
   test "should get index" do
+    login_as(:one)
   	get :index
   	assert_response :success
   end
