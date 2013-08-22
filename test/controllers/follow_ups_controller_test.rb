@@ -2,10 +2,11 @@ require 'test_helper'
 
 class FollowUpsControllerTest < ActionController::TestCase
 
-  test "should get index" do
-    login_as(:one)
+  test "should not be able to do anything if not logged in" do
     get :index
-    assert_response :success
+    assert_redirected_to login_path
+    get :new
+    assert_redirected_to login_path
   end
 
   test "should get new form for follow_up" do 
@@ -28,7 +29,6 @@ class FollowUpsControllerTest < ActionController::TestCase
     assert_equal expected_user.id, follow_up.assigned_user_id
     assert_equal note.id, follow_up.note.id
     assert_redirected_to client_path(follow_up.note.client_id)
-
   end
 
   test "should update" do
@@ -42,5 +42,4 @@ class FollowUpsControllerTest < ActionController::TestCase
 
     assert_redirected_to client_path(follow_up.note.client_id)
   end
-
 end

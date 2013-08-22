@@ -1,5 +1,7 @@
 class FollowUpsController < ApplicationController
 
+  before_action :require_current_user
+
   def index
   end
 
@@ -23,7 +25,7 @@ class FollowUpsController < ApplicationController
   private
 
   def follow_up_params
-    params.require(:follow_up).permit(:task, :assigned_user_id)
+    params.require(:follow_up).permit(:task, :assigned_user_id, :completed)
   end
 
 end
