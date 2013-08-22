@@ -1,5 +1,7 @@
 class Client < ActiveRecord::Base
-	has_many :users
+	has_many :cases
+	has_many :users, through: :cases
+
 	has_many :notes
 	has_many :vitals
 

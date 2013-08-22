@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
-	has_many :clients
+	has_many :cases
+  has_many :clients, through: :cases
+  
 	has_many :notes
   has_many :follow_ups
 

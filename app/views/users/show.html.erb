@@ -1,17 +1,3 @@
-
-
-	
-
-	<!--Navbar div -->
-<div class="navbar navbar-inverse navbar-fixed-top">
-	<ul class="nav navbar-nav">
-	<li class="navbar-brand" style="
-	padding-left: 40px;
-	padding-right: 40px;">SmartProvider</li>
-		<li><%= link_to "Feed", notes_path %></li>
-	</ul>
-</div>
-
 <div class="container" >
   <h1> <%= @user.first_name %> </h1>
 
@@ -34,13 +20,15 @@
 								<td><b>Note<b></td>
 								<td><b>Date<b></td>
 							</tr>
-							<% @user.notes.each do |note| %>
+							<% @user.clients.each do |client| %>
+							<% client.notes.each do |note| %>
 							<tr>
-								<td><%= link_to note.client.first_name, client_path(note.client) %></td>
+								<td><%= link_to client.first_name, client_path(client) %></td>
 								<td><%= note.title %></td>
 								<td style="width:400px;"><%= note.description %></td>
 								<td><%= note.created_at.strftime("%m/%d/%Y at %I:%M%p") %></td>
 							</tr>
+							<% end %>
 							<% end %>
 					  </tbody>
 				  </table>

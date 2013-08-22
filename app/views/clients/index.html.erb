@@ -1,7 +1,7 @@
-<h1>test</h1>
+<h1>Clients Index</h1>
 
 <table>
-<% @clients.each do |client| %>
+<% @current_user.clients.each do |client| %>
 
 <td class="list_description"> <dl>
 <dt><%= link_to client.first_name, client_path(client)%></dt>

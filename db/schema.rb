@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130821202910) do
+ActiveRecord::Schema.define(version: 20130822045952) do
 
   create_table "cases", force: true do |t|
     t.integer  "user_id"
@@ -19,11 +19,15 @@ ActiveRecord::Schema.define(version: 20130821202910) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-ActiveRecord::Schema.define(version: 20130820194013) do
+
+  add_index "cases", ["client_id"], name: "index_cases_on_client_id"
+  add_index "cases", ["user_id"], name: "index_cases_on_user_id"
 
   create_table "clients", force: true do |t|
     t.string   "first_name"
     t.string   "last_name"
+    t.date     "date_of_birth"
+    t.string   "gender"
     t.string   "hcn"
     t.string   "physician"
     t.string   "physician_phone"

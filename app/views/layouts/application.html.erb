@@ -7,6 +7,15 @@
   <%= csrf_meta_tags %>
 </head>
 
+<!--Navbar div -->
+<div class="navbar navbar-inverse navbar-fixed-top">
+	<ul class="nav navbar-nav">
+		<li class="navbar-brand" style="padding-left: 40px;
+		padding-right: 40px;">SmartProvider</li>
+		<li><%= button_to 'Login', login_path, method: :get, class: "btn pull-right btn-primary" %></li>
+	</ul>
+</div>
+
 <div class="content">
   <%= yield %>
 </div>

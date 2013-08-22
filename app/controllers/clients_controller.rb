@@ -11,9 +11,9 @@ class ClientsController < ApplicationController
 	end
 
 	def create
-		@client = Client.new(client_params)
-		@client = Client.new(client_params)
+		@client = Client.new(client_params)	
 		@client.save
+		@current_user.clients << @client
 
 		redirect_to clients_path
 	end
