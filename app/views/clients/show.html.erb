@@ -1,12 +1,6 @@
 <h1> <%= @client.first_name %> </h1>
 <div class="container">
-  <div class="span6" style="width:70%; float:left;">
-  	<ul class="nav nav-tabs">
-      <li class="active"><a href="#">Notes</a></li>
-      <li><%= link_to "Vitals", new_client_vital_path(@client) %></li>
-      <li><%= link_to "Vitals History", client_vitals_path(@client) %></li>
-    </ul>
-  </div>
+  <%= render "layouts/client_dashboard" %>
   <div class="row-fluid">
     <div class="span6" style="width:60%; float:left;">
       <h3>Notes</h3>

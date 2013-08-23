@@ -23,6 +23,7 @@
 
 .photo img {
 	max-width: 150px;
+	max-height: 120px;
 	border-radius: 10px;
 	border: 2px solid #fff;
 	box-shadow: 1px 1px 2px 2px #888;
