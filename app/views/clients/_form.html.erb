@@ -11,7 +11,7 @@
   
 </div>
 
-<%= form_for @client do |f| %>
+<%= form_for @client, html: {multipart: true} do |f| %>
 
 	<div>First Name: 
 		<br>
@@ -50,8 +50,12 @@
   	<br>
   	<%= f.text_field :contact_relationship %></div>
   <div>Contact Phone: 
+    <br>
+    <%= f.text_field :contact_phone %></div>
+    <br>
+  <div>Upload Image: 
   	<br>
-  	<%= f.text_field :contact_phone %></div>
+  	<%= f.file_field :image %></div>
   	<br>
   <div><%= f.submit "Save", class: "btn btn-primary" %></div>
 <% end %>

@@ -8,4 +8,6 @@ class Client < ActiveRecord::Base
 	validates :first_name, :last_name, :date_of_birth, :gender, :hcn, :diagnosis, :address, presence: true
   validates_uniqueness_of :hcn
 
+  mount_uploader :image, ImageUploader
+
 end
