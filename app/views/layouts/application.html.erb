@@ -6,8 +6,6 @@
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
-
-<!--Navbar div -->
 <% if session[:user_id] %>
 <div class="navbar navbar-inverse navbar-fixed-top">
 	<ul class="nav navbar-nav">
@@ -28,9 +26,9 @@
     <li><%= link_to "My Account",user_path(@current_user)%></a></li>  
   </ul>
 </div>
+  <%= render "layouts/navbar" %>
+  <%= render "layouts/dashboard" %>
 <% end %>
-
-
 <div class="content">
   <%= yield %>
 </div>
