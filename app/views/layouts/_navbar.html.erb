@@ -2,6 +2,8 @@
   <ul class="nav navbar-nav">
     <li class="navbar-brand" style="padding-left: 40px;
     padding-right: 40px;">SmartProvider</li>
-    <li><%= button_to 'Login', login_path, method: :get, class: "btn pull-right btn-primary" %></li>
   </ul>
+  <div class="navbar-form pull-right">
+    <%= button_to 'Logout', logout_path, method: :get, class: "btn pull-right btn-primary" %>
+  </div>
 </div>
