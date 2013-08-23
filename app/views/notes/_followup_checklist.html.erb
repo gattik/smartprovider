@@ -1,0 +1,13 @@
+<div class="span2" style="float: right;">
+  <h3>
+    Your Follow-ups
+  </h3>
+  <% @notes.each do |note| %>
+    <% unless note.follow_ups == nil %>
+  <label class="checkbox">
+    <input type="checkbox">
+    <%= note.follow_ups.task %>
+  </label>
+    <% end %>
+  <% end %>
+</div>
