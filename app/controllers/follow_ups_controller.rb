@@ -3,6 +3,8 @@ class FollowUpsController < ApplicationController
   before_action :require_current_user
 
   def index
+    @follow_ups = FollowUp.all
+    @current_user_follow_ups = @follow_ups.find_by assigned_user_id: @current_user.id
   end
 
   def new

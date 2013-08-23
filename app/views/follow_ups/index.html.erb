@@ -1,2 +1,9 @@
 <h1>Follow Ups Index</h1>
 
+<%= @current_user_follow_ups.each do |follow_up| %>
+
+<div>Task: <%= follow_up.task %></div>
+
+<div>Completed?: <%= follow_up.completed %></div>
+<div></div>
+<% end %>
