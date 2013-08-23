@@ -7,7 +7,7 @@ class UserMailerTest < ActionMailer::TestCase
     # Send the email, then test that it got queued
     user = users(:one)
 
-    email = UserMailer.confirm_email(user).deliver
+    email = UserMailer.welcome_email(user).deliver
     
     assert !ActionMailer::Base.deliveries.empty?
  
