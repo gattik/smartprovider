@@ -9,7 +9,7 @@ class LoginController < ApplicationController
 
   	if @user && login_valid?(@user)
       session[:user_id] = @user.id
-    	redirect_to notes_path(@user)
+    	redirect_to users_path(@user)
     else
     	flash[:error] = "Invalid Login"
     	redirect_to login_path

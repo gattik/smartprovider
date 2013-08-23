@@ -4,7 +4,7 @@
   <div><%= follow_up.task %><div>
 <% end %>
 
-<%= form_for [@note, FollowUp.new] do |f| %>
+<%= form_for [@client, @notes, FollowUp.new] do |f| %>
 
 <div>
   Task: <%= f.text_field :task %>

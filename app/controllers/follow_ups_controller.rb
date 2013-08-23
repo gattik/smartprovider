@@ -4,7 +4,6 @@ class FollowUpsController < ApplicationController
 
   def index
     @follow_ups = FollowUp.all
-    # @current_user_follow_ups = @follow_ups.find_by assigned_user_id: @current_user.id
   end
 
   def new
@@ -12,9 +11,10 @@ class FollowUpsController < ApplicationController
   end
 
   def create
-    @client = Client.find(params[:id])
+    @client = Client.find(params[:client_id])
     @follow_up = FollowUp.new(follow_up_params)
     @follow_up.note = Note.find(params[:note_id])
+    @follow_up.user_id = @current_user.id
     @follow_up.save
     redirect_to client_path(@client)
   end
@@ -29,6 +29,15 @@ class FollowUpsController < ApplicationController
 
   def follow_up_params
     params.require(:follow_up).permit(:task, :assigned_user_id, :completed)
+  end
+
+  def current_user_follow_ups
+    @follow_ups.each do |follow_up|
+      @current_user_follow_ups = []
+      if follow_up.assigned_user_id == @current_user.id
+        @current_user_follow_ups << follow_up
+      end
+    end
   end
 
 end
