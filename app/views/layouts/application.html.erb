@@ -7,25 +7,6 @@
   <%= csrf_meta_tags %>
 </head>
 <% if session[:user_id] %>
-<div class="navbar navbar-inverse navbar-fixed-top">
-	<ul class="nav navbar-nav">
-		<li class="navbar-brand" style="padding-left: 40px;
-		padding-right: 40px;">SmartProvider</li>
-		<li><%= button_to 'Login', login_path, method: :get, class: "btn pull-right btn-primary" %></li>
-	</ul>
-</div>
-
-<div class="col col-lg-2">
-  <ul class="nav nav-pills nav-stacked">
-    <li class="nav-header"></li>
-    <li class="active"> <%= link_to "Feed",user_path(@current_user)%></li>
-    <li><%= link_to "Clients", clients_path %></li>
-    <li class="divider"></li>
-    <li><a href="#">Follow-ups</a></li>
-    <li><a href="#">Vitals History</a></li>
-    <li><%= link_to "My Account",user_path(@current_user)%></a></li>  
-  </ul>
-</div>
   <%= render "layouts/navbar" %>
   <%= render "layouts/dashboard" %>
 <% end %>
