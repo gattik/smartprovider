@@ -16,4 +16,15 @@
 	margin-top: 100px;
 }
 
+.photo {
+	float: left;
+	margin-right: 20px;
+}
+
+.photo img {
+	max-width: 150px;
+	border-radius: 10px;
+	border: 2px solid #fff;
+	box-shadow: 1px 1px 2px 2px #888;
+}
 

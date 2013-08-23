@@ -1,19 +1,28 @@
-<h1>Clients Index</h1>
+<h2>Your Clients</h2>
 <div class="container">
   <div class="span6" style="width:70%; float:left;">
-		<ul>
 		<% @current_user.clients.each do |client| %>
-
-		<li class="list_description"> <dl>
-		<dt><%= link_to client.first_name, client_path(client)%></dt>
-		<p><b>Diagnosis: </b><%= client.diagnosis %></p><p><b>Advanced Directives: </b><%= client.advanced_directives %></p>
-
-		<% end %> </table>
-
-		<br>
-
-		<%= button_to "New Client", new_client_path(@client), method: :get,class: "btn btn-primary btn-lg" %>
+			<div class="span4" style="margin-left: 50px;">
+				<div class="photo">
+					<%= image_tag client.image %>
+				</div>
+				<div class="span3">
+					<% full_name = client.first_name + " " + client.last_name %>
+					<h3><%= link_to full_name, client_path(client)%></h3>
+					<b>Diagnosis:</b> <%= client.diagnosis %><br />
+					<b>Advanced Directives:</b> <%= client.advanced_directives %><br />
+					<b>Contact Name:</b> <%= client.contact_name %> <br />
+					<b>Contact Phone:</b> <%= client.contact_phone %>
+					<br><br>
+					<hr>
+				</div>
+			</div>
+		<% end %> 
 	</div>
+
+	<%= button_to "New Client", new_client_path(@client), method: :get,class: "btn btn-primary btn-lg" %>
 </div>
 
-
+<script>
+  $('.nav a:contains("Clients")').parent().addClass('active');
+</script>
