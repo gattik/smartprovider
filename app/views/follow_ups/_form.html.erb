@@ -1,0 +1,7 @@
+<%= form_for @follow_up do |f| %>
+
+ <div>Task: <%= f.text_field :task %></div>
+  <div>Assigned to: <%= collection_select(:follow_up, :user_id, User.all, :id, :first_name) %></div>
+
+  <div><%= f.submit "Save" %></div>
+<% end %>

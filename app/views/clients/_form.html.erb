@@ -1,17 +1,7 @@
 <!--Navbar div -->
-<div class="navbar navbar-inverse navbar-fixed-top">
-  <ul class="nav navbar-nav">
-
-  	<li class="navbar-brand" style="
-    padding-left: 40px;
-    padding-right: 40px;">SmartProvider</li>
-    <li><%= link_to "Feed", notes_path %></li>
-     <li><%= link_to "My Account", user_path(@user) %></li>
-   </ul>
-  
-</div>
-
-<%= form_for @client, html: {multipart: true} do |f| %>
+<div class="container" >
+	<div class="span6" style="width:70%; float:left;">
+	<%= form_for @client, html: {multipart: true} do |f| %>
 
 	<div>First Name: 
 		<br>

@@ -37,7 +37,6 @@ gem 'bcrypt-ruby'
 
 gem 'dynamic_form'
 
-
 gem 'carrierwave'
 
 # Use unicorn as the app server
