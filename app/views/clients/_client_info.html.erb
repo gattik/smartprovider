@@ -5,7 +5,7 @@
   </div>
   <% @client.notes.each do |note| %>
     <% unless note.follow_ups == nil %>
-  <input type="checkbox"><%= note.follow_ups.first.task %></label>
+    <div class='checkbox'><%= note.follow_ups.first.task %></div>
     <hr>
     <% end %>
   <% end %>
