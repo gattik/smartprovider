@@ -1,5 +1,18 @@
 <h1>Show me the notes</h1>
 
 <% @note.follow_ups.each do |follow_up| %>
-  <%= follow_up.task %>
+  <div><%= follow_up.task %><div>
 <% end %>
+
+<%= form_for [@note, FollowUp.new] do |f| %>
+
+<div>
+  Task: <%= f.text_field :task %>
+</div>
+<div>Assigned to: 
+  <%= f.select 'assigned_user_id', options_from_collection_for_select(User.all, "id", "first_name") %></div>
+
+<div><%= f.submit "Save" %></div>
+<% end %>
+
+
