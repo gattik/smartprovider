@@ -26,7 +26,11 @@ class ClientsController < ApplicationController
 	def add_user_to
 		@client = Client.find(params[:id])
 		@selected_user = User.find(params[:user_id])
-		@client.users << @selected_user
+		if @client.users.include? @selected_user
+			flash[:error] = "Client already has user!"
+		else
+		  @client.users << @selected_user
+		end
 		redirect_to client_path(@client)
 	end
 

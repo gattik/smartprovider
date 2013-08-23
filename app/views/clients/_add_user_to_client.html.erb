@@ -1,4 +1,5 @@
 <%= form_tag(add_user_to_client_path, method: :post) do %>
+	<%= flash[:error] %>
   <%= select_tag 'user_id', options_from_collection_for_select(User.all, "id", "first_name") %>
   <%= submit_tag "Add Client Member", class: "btn btn-large btn-primary" %>
 <% end %>
