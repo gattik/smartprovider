@@ -1,16 +1,9 @@
 <!--Navbar div -->
-<div class="navbar navbar-inverse navbar-fixed-top">
-	<ul class="nav navbar-nav">
-	<li class="navbar-brand" style="
-	padding-left: 40px;
-	padding-right: 40px;">SmartProvider</li>
-		<li><%= link_to "Feed", vitals_path %></li>
- 		<li><%= link_to "My Account", user_path(@current_user) %></li>
-	</ul>
-</div>
+
   <div class="container" >
  
   	<ul class="nav nav-tabs">
+  		<div class="span6" style="width:70%; float:left;">
       <li><%= link_to "Notes", client_path(@current_client) %></li>
       <li class="active"><a href="#">Vitals</a></li>
       <li><%= link_to "Vitals History", client_vitals_path(@client) %></li>

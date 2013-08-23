@@ -4,17 +4,15 @@ class VitalsControllerTest < ActionController::TestCase
  require 'test_helper'
 
   test "should not be able to do anything if not logged in" do
-    skip
-    get :index
-    assert_redirected_to login_path
-    get :new
+    session[:client_id] = clients(:one).id
+    get :index, client_id: vitals(:one).id
     assert_redirected_to login_path
   end
 
   test "should get index" do
     login_as(:one)
     session[:client_id] = clients(:one).id
-  	get :index, id: vitals(:one).id
+  	get :index, client_id: vitals(:one).id
   	assert_response :success
   end
 
