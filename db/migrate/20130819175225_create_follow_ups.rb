@@ -3,7 +3,6 @@ class CreateFollowUps < ActiveRecord::Migration
     create_table :follow_ups do |t|
       t.string :task
       t.boolean :completed, default: false
-      t.integer :assigned_user
       t.references :user
       t.references :note
 

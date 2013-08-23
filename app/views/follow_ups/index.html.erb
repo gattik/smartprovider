@@ -1,10 +1,5 @@
 <h1>Follow Ups Index</h1>
 
-    <%@follow_ups.each do |follow_up|%>
-      <%@current_user_follow_ups = []%>
-      <%if follow_up.assigned_user_id == @current_user.id%>
-        <%@current_user_follow_ups << follow_up%>
-      <%end%>
-    <%end%>
-
-<%= @current_user_follow_ups %>
+<% @current_user.follow_ups.each do |follow_up| %>
+  <%= follow_up.task %>
+<% end %>
