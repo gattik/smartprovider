@@ -8,77 +8,80 @@
  		<li><%= link_to "My Account", user_path(@current_user) %></li>
 	</ul>
 </div>
-  <div class="container" >
-  <h1> <%= @client.first_name %> </h1>
-  	<ul class="nav nav-tabs">
-      <li class="active"><a href="#">Notes</a></li>
-      <li><%= link_to "Vitals", new_client_vital_path(@client) %></li>
-      <li><%= link_to "Vitals History", client_vitals_path(@client) %></li>
-    </ul>
-  <div class="row-fluid">
-    <div class="span6" style="width:70%; float:left;">
-      <h3>Notes</h3>
-        <label class="control-label">Add a new note:</label>
-        <p> <%= form_for [@client, Note.new] do |f| %>
-				<div> Title: <br> <%= f.text_field :title%></div>
-			  <div> Description: <br> <%= f.text_area :description, rows: 4, cols: 120 %></div> <br>
-			   <%= f.submit "Add Note", class: "btn btn-small btn-primary" %>
-			<% end %>
-      <br>
-      </p>
-      <hr>
-    	<div class="row-fluid">
-      	<div class="span6">
-          <h4>Recent Notes</h4>
-				  <table class="table" style="width:70%; float:left;">
-					  <tbody>
-							<tr>
-								<td><b>Title<b></td>
-								<td><b>Note<b></td>
-								<td><b>Date<b></td>
-							</tr>
-							<% @client.notes.each do |note| %>
-							<tr>
-								<td><%= note.title %></td>
-								<td style="width:400px;"><%= note.description %></td>
-								<td><%= note.created_at.strftime("%m/%d/%Y at %I:%M%p") %></td>
-							</tr>
-							<% end %>
-					  </tbody>
-				  </table>
-			  </div>          
-      </div>
+<div class="container" >
+<h1> <%= @client.first_name %> </h1>
+	<ul class="nav nav-tabs">
+    <li class="active"><a href="#">Notes</a></li>
+    <li><%= link_to "Vitals", new_client_vital_path(@client) %></li>
+    <li><%= link_to "Vitals History", client_vitals_path(@client) %></li>
+  </ul>
+<div class="row-fluid">
+  <div class="span6" style="width:70%; float:left;">
+    <h3>Notes</h3>
+      <label class="control-label">Add a new note:</label>
+      <p> <%= form_for [@client, Note.new] do |f| %>
+			<div> Title: <br> <%= f.text_field :title%></div>
+		  <div> Description: <br> <%= f.text_area :description, rows: 4, cols: 120 %></div> <br>
+		   <%= f.submit "Add Note", class: "btn btn-small btn-primary" %>
+		<% end %>
+    <br>
+    </p>
+    <hr>
+  	<div class="row-fluid">
+    	<div class="span6">
+        <h4>Recent Notes</h4>
+			  <table class="table" style="width:70%; float:left;">
+				  <tbody>
+						<tr>
+							<td><b>Title<b></td>
+							<td><b>Note<b></td>
+							<td><b>Date<b></td>
+						</tr>
+						<% @client.notes.each do |note| %>
+						<tr>
+							<td><%= note.title %></td>
+							<td style="width:400px;"><%= note.description %></td>
+							<td><%= note.created_at.strftime("%m/%d/%Y at %I:%M%p") %></td>
+						</tr>
+						<% end %>
+				  </tbody>
+			  </table>
+		  </div>          
     </div>
   </div>
-	<div>
-	<div class="span4" style="float: right;">
-	  <h3>Client Info</h3>
-			<p><b>Health Card: </b><%= @client.hcn %></p>
-			<p><b>Physician: </b><%= @client.physician %></p>
-			<p><b>Physician Phone: </b><%= @client.physician_phone %></p>
-			<p><b>Diagnosis: </b><%= @client.diagnosis %></p>
-			<p><b>Advanced Directives: </b><%= @client.advanced_directives %></p>
-			<p><b>Address: </b><%= @client.address %></p>
-			<p><b>Contact: </b><%= @client.contact_name %></p>
-			<p><b>Contact Relationship: </b><%= @client.contact_relationship %></p>
-			<p><b>Contact Phone: </b><%= @client.contact_phone %></p>
-	    <img src="https://s3.amazonaws.com/jetstrap-site/images/website/index/what_icon.png"
-	    class="pull-right">
-	    <%= link_to 'Edit', edit_client_path(@client), method: :get, class: "btn btn-small btn-success" %>
-		    <label class="checkbox">
-		  <div>
-		    <b class="text-left">Follow-ups</b>
-		  </div>
-		  <input type="checkbox">Remember me</label>
-		    <label class="checkbox">
-		  <input type="checkbox">Remember me</label>
-		    <hr>
-		  <h4>Recent Vitals</h4>
-		  <div><% @client.vitals.each do |vital| %>
-								<p><b>Weight: </b><%= vital.weight %></p>
-								
-							<% end %>
+</div>
+<div>
+<div class="span4" style="float: right;">
+  <h3>Client Info</h3>
+		<p><b>Health Card: </b><%= @client.hcn %></p>
+		<p><b>Physician: </b><%= @client.physician %></p>
+		<p><b>Physician Phone: </b><%= @client.physician_phone %></p>
+		<p><b>Diagnosis: </b><%= @client.diagnosis %></p>
+		<p><b>Advanced Directives: </b><%= @client.advanced_directives %></p>
+		<p><b>Address: </b><%= @client.address %></p>
+		<p><b>Contact: </b><%= @client.contact_name %></p>
+		<p><b>Contact Relationship: </b><%= @client.contact_relationship %></p>
+		<p><b>Contact Phone: </b><%= @client.contact_phone %></p>
+    <img src="https://s3.amazonaws.com/jetstrap-site/images/website/index/what_icon.png"
+    class="pull-right">
+    <%= link_to 'Edit', edit_client_path(@client), method: :get, class: "btn btn-small btn-success" %>
+	    <label class="checkbox">
+	  <div>
+	    <b class="text-left">Follow-ups</b>
+	  </div>
+	  <input type="checkbox">Remember me</label>
+	    <label class="checkbox">
+	  <input type="checkbox">Remember me</label>
+	    <hr>
+	  <h4>Recent Vitals</h4>
+	  <div><% @client.vitals.each do |vital| %>
+							<p><b>Weight: </b><%= vital.weight %></p>
+							
+						<% end %>
 
-		  </div>
-	</div>
-	    
+	  </div>
+</div>
+
+</div>
+
+<%= render 'add_user_to_client' %>

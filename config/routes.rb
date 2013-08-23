@@ -9,7 +9,18 @@ Smartprovider::Application.routes.draw do
   resources :clients do
     resources :notes
     resources :vitals
+    member do
+      post 'add_user_to'
+    end
   end
+ 
+  # get /users?method=delete&id=4
+  # get /clients/4/add_user/130
+  # params[:client_id]
+  # post 'clients/:client_id/add_user/:user_to_assign', to: "clients#show"
+  # post 'add_user', to: "clients#add_user"
+
+
 
   get '/login', to: 'login#new'
   post '/login', to: 'login#create'

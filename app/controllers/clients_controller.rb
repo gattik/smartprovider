@@ -20,6 +20,14 @@ class ClientsController < ApplicationController
 
 	def show
 		@client = Client.find(params[:id])
+		@users = User.all
+	end
+
+	def add_user_to
+		@client = Client.find(params[:id])
+		@selected_user = User.find(params[:user_id])
+		@client.users << @selected_user
+		redirect_to client_path(@client)
 	end
 
 	def edit
@@ -30,6 +38,7 @@ class ClientsController < ApplicationController
 	def update
 		@client = Client.find(params[:id])
 		@client.update(client_params)
+
 		redirect_to clients_path
 	end
 
@@ -37,6 +46,9 @@ class ClientsController < ApplicationController
 		@client = Client.find(params[:id])
 		@client.destroy
 		redirect_to clients_path
+	end
+
+	def remove_user_from_client
 	end
 
 	private
