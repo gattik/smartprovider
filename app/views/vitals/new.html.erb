@@ -1,7 +1,6 @@
-<!--Navbar div -->
-
-  <div class="container" >
-  	<h1> <%= @client.first_name %> </h1>
+<h1> <%= @client.first_name %> </h1>
+<div class="container">
+  <div class="span6" style="width:70%; float:left;">
  		<%#= render partial: 'nav', locals: { client: @client } %>
   	<ul class="nav nav-tabs">
       <li><%= link_to "Notes", client_path(@client) %></li>

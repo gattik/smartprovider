@@ -1,5 +1,6 @@
 <div class="container" >
   <h1> <%= @user.first_name %> </h1>
+  <div class="span6" style="width:60%; float:left;">
 
   <p>First Name: <%= @current_user.first_name %></p>
 	<p>Last Name: <%= @current_user.last_name %></p>
@@ -10,9 +11,9 @@
 	<%= button_to 'Edit', edit_user_path(@current_user), method: :get, class: "btn btn-success btn-small" %> <br>
 
   <div class="row-fluid">
-      	<div class="span6">
+      	<div class="span6" style="width:60%; float:left;">
           <h4>Recent Notes by <%= @user.first_name %></h4>
-				  <table class="table" style="width:70%; float:left;">
+				  <table class="table">
 					  <tbody>
 							<tr>
 								<td><b>Client<b></td>
@@ -32,6 +33,15 @@
 							<% end %>
 					  </tbody>
 				  </table>
-			  </div>          
+			  </div>
+			  <div class="span4" style="float: right;">
+				  <h3>Follow-ups</h3>
+				   <label class="checkbox">
+					  <input type="checkbox">Remember me</label>
+					    <label class="checkbox">
+					  <input type="checkbox">Remember me</label>
+					    <hr>
+				</div>
       </div>
+    </div>
 </div>

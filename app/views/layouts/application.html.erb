@@ -24,7 +24,8 @@
     <li><%= link_to "Clients", clients_path %></li>
     <li class="divider"></li>
     <li><a href="#">Follow-ups</a></li>
-    <li><a href="#">Vitals History</a></li>  
+    <li><a href="#">Vitals History</a></li>
+    <li><%= link_to "My Account",user_path(@current_user)%></a></li>  
   </ul>
 </div>
 <% end %>
