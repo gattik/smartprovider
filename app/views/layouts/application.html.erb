@@ -15,6 +15,7 @@
 <% if session[:user_id] %>
   <%= render "layouts/navbar" %>
   <%= render "layouts/dashboard" %>
+  
 <% end %>
 <div class="content">
   <%= yield %>

@@ -15,7 +15,8 @@ Smartprovider::Application.routes.draw do
       post 'add_user_to'
     end
   end
- 
+
+
   # get /users?method=delete&id=4
   # get /clients/4/add_user/130
   # params[:client_id]
