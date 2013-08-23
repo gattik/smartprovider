@@ -1,67 +1,38 @@
-
-	<%= form_for @user do |f| %>
-	<%= f.error_messages %>
-	
-	<div>
-	  <%= f.label :username %>
-	  <br>
-	  <%= f.text_field :username %>
-	</div>
-
-	<div>
-	  <%= f.label :first_name %>
-	  <br>
-	  <%= f.text_field :first_name %>
-	</div>
-
-	<div>
-	  <%= f.label :last_name %>
-	  <br>
-	  <%= f.text_field :last_name %>
-	</div>
-
-	<div>
-	  <%= f.label :designation %>
-	  <br>
-	  <%= f.text_field :designation %>
-	</div>
-
-	<div>
-		<%= f.label :phone %>
-		<br>
-		<%= f.phone_field :phone %>
-	</div>
-
-	<div>
-		<%= f.label :email %>
-		<br>
-		<%= f.email_field :email %>
-	</div>
-
-	<div>
-		<%= f.label :password %>
-		<br>
-		<%= f.password_field :password %>
-	</div>
-
-	<div>
-		<%= f.label :password_confirmation %>
-		<br>
-		<%= f.password_field :password_confirmation %>
-	</div>
-
-	<br>
-	<div>
-		<%= f.submit "Save", class: "btn btn-success" %>
-	</div>
-
-	<% end %>
-
-	<hr>
-	<div class="footer">
-		<p>
-			© SmartProvider 2013
-		</p>
-	</div>
-
-
+<%= form_for @user do |f| %>
+<%= f.error_messages %>
+<div>
+  <%= f.label :username %>
+  <%= f.text_field :username, class: 'txtfield' %>
+</div>
+<div>
+  <%= f.label :first_name %>
+  <%= f.text_field :first_name, class: 'txtfield' %>
+</div>
+<div>
+  <%= f.label :last_name %>
+  <%= f.text_field :last_name, class: 'txtfield' %>
+</div>
+<div>
+  <%= f.label :designation %>
+  <%= f.text_field :designation, class: 'txtfield' %>
+</div>
+<div>
+	<%= f.label :phone %>
+	<%= f.phone_field :phone, class: 'txtfield' %>
+</div>
+<div>
+	<%= f.label :email %>
+	<%= f.email_field :email, class: 'txtfield' %>
+</div>
+<div>
+	<%= f.label :password %>
+	<%= f.password_field :password, class: 'txtfield' %>
+</div>
+<div>
+	<%= f.label :password_confirmation %>
+	<%= f.password_field :password_confirmation, class: 'txtfield' %>
+</div>
+<div>
+	<%= f.submit "Create", class: "btn btn-success" %>
+</div>
+<% end %>

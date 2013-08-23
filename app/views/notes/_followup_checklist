@@ -1,9 +1,0 @@
-    <div class="span2" style="float: right;">
-      <h3>
-        Follow-ups
-      </h3>
-      <label class="checkbox">
-        <input type="checkbox">
-        Remember me
-      </label>
-    </div>

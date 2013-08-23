@@ -1,7 +1,7 @@
 <div class="container-narrow">
 	<div class="masthead">
-		<%= button_to 'Login', login_path, method: :get, class: "btn pull-right btn-primary" %>
-		
+		<a href='#loginmodal' class='btn pull-right btn-primary' id='modaltrigger'>Login</a>
+
 		<h3><p class="text-muted">SmartProvider
 		</p>
 		</h3>
@@ -14,7 +14,7 @@
 		<p class="lead">
 			Helping nurses with home care
 		</p>
-		<%= button_to 'Create an Account', new_user_path, method: :get, class: "btn btn-large btn-success" %>
+		<a href='#createmodal' class='btn btn-large btn-success' id='modaltrigger2'>Create an Account</a>
 	</div>
 	<div class="row-fluid marketing">
 	</div>
@@ -24,4 +24,17 @@
 			© SmartProvider 2013
 		</p>
 	</div>
+
+  <div id='loginmodal' style='display:none;'>
+  	<h1>User Login</h1>
+  	  <%= render 'welcome/form' %>
+  	</form>
+  </div>
+
+  <div id='createmodal' style='display:none;'>
+  	<h1>Create an Account</h1>
+  	  <%= render 'users/form' %>
+  	</form>
+  </div>
+
 </div>
