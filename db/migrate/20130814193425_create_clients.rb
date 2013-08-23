@@ -14,6 +14,7 @@ class CreateClients < ActiveRecord::Migration
       t.string :contact_name
       t.string :contact_phone
       t.string :contact_relationship
+      t.string :image
 
       t.timestamps
     end

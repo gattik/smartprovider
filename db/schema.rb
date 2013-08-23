@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 20130822045952) do
     t.string   "contact_name"
     t.string   "contact_phone"
     t.string   "contact_relationship"
+    t.string   "image"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

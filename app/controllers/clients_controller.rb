@@ -26,7 +26,11 @@ class ClientsController < ApplicationController
 	def add_user_to
 		@client = Client.find(params[:id])
 		@selected_user = User.find(params[:user_id])
-		@client.users << @selected_user
+		if @client.users.include? @selected_user
+			flash[:error] = "Client already has user!"
+		else
+		  @client.users << @selected_user
+		end
 		redirect_to client_path(@client)
 	end
 
@@ -54,6 +58,6 @@ class ClientsController < ApplicationController
 	private
 
 	def client_params
-		params.require(:client).permit(:first_name, :last_name, :date_of_birth, :gender, :hcn, :physician, :physician_phone, :diagnosis, :advanced_directives, :address, :contact_name, :contact_phone, :contact_relationship)
+		params.require(:client).permit(:first_name, :last_name, :date_of_birth, :gender, :hcn, :physician, :physician_phone, :diagnosis, :advanced_directives, :address, :contact_name, :contact_phone, :contact_relationship, :image)
 	end
 end 
