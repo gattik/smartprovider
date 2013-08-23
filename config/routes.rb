@@ -6,6 +6,8 @@ Smartprovider::Application.routes.draw do
 
   resources :users
 
+  get '/vitals', to: "vitals#index"
+
   resources :clients do
     resources :notes
     resources :vitals

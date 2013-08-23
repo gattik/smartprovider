@@ -1,10 +1,23 @@
 <div class="col col-lg-2">
   <ul class="nav nav-pills nav-stacked">
     <li class="nav-header"></li>
-    <li class="active"> <%= link_to "Feed",notes_path(@current_user)%></li>
-    <li><%= link_to "Clients", clients_path %></li>
-    <li class="divider"></li>
-    <li><a href="#">Follow-ups</a></li>
-    <li><a href="#">Vitals History</a></li>  
+    <li class="active">
+    	<%= link_to "Glance", users_path %>
+    </li>
+    <li>
+    	<%= link_to "Clients", clients_path %>
+    </li>
+    <li>
+    	<%= link_to "Notes", notes_path %>
+    </li>
+    <li>
+    	<%= link_to "Follow-ups", follow_ups_path %>
+    </li>
+    <li>
+    	<%= link_to "Vitals", vitals_path %>
+    </li>
+    <li>
+    	<%= link_to "My Account", user_path(@current_user) %>
+    </li>  
   </ul>
 </div>
