@@ -1,16 +1,11 @@
 <h1> <%= @client.first_name %> </h1>
-  <div class="container" >
-  	<div class="span6" style="width:70%; float:left;">
-   <%= render "layouts/client_dashboard" %>
-
-
-<div class="container">
-	<h1>Latest Vitals</h1>
-	<div class="row-fluid">
-		<div class="span6">
-			<h3>Vitals</h3>
-			<table class="table" style="width:100%; float:left;">
-				<tbody>
+<div class="container" >
+	  <%= render "layouts/client_dashboard" %>
+  <div class="row-fluid">
+	  <div class="span6" style="width:60%; float:left;">
+		  <h3>Vitals</h3>
+	    <table class="table" style="width:100%; float:left;">
+		    <tbody>
 					<tr>
 						<td><b>Weight<b></td>
 						<td><b>Height<b></td>
@@ -23,21 +18,22 @@
 						<td><b>Date<b></td>
 					</tr>
 					<% @client.vitals.each do |vital| %>
-							<tr>
-								<td><%= vital.weight %></td>
-								<td><%= vital.height %></td>
-								<td><%= vital.systolic %></td>
-								<td><%= vital.diastolic %></td>
-								<td><%= vital.beats %> </td>
-								<td><%= vital.blood_sugar %></td>
-								<td><%= vital.breaths %></td>
-								<td><%= vital.temperature %> </td>
-								<td><%= vital.created_at.strftime("%m/%d/%Y at %I:%M%p") %></td>
-							</tr>
-							<% end %>
-				</tbody>
-			</table>
-		</div>
-	</div>
-      <br>
+					<tr>
+						<td><%= vital.weight %></td>
+						<td><%= vital.height %></td>
+						<td><%= vital.systolic %></td>
+						<td><%= vital.diastolic %></td>
+						<td><%= vital.beats %> </td>
+						<td><%= vital.blood_sugar %></td>
+						<td><%= vital.breaths %></td>
+						<td><%= vital.temperature %> </td>
+						<td><%= vital.created_at.strftime("%m/%d/%Y at %I:%M%p") %></td>
+					</tr>
+					<% end %>
+		    </tbody>
+	    </table>
+    </div>
+  </div>
+</div>
+<br>
     

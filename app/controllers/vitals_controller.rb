@@ -3,8 +3,8 @@ class VitalsController < ApplicationController
   before_action :require_current_user
 
   def index
+    @vitals = Vital.all #Vital.find(params[:id])
     @client = Client.find(params[:client_id])
-    @vital = @client.vitals #Vital.find(params[:id])
   end
 
   def new
@@ -21,7 +21,8 @@ class VitalsController < ApplicationController
   end
 
   def show
-  	@vital = Vital.find(params[:id])
+  	@client = Client.find(params[:client_id])
+    @vital = @client.vitals
   end
 
   # def edit
