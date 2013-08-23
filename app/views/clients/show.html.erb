@@ -15,7 +15,7 @@
     	<div class="row-fluid">
       	<div class="span6">
           <h4>Recent Notes</h4>
-				  <table class="table" style="width:70%; float:left;">
+				  <table class="table" style="float:left;">
 					  <tbody>
 							<tr>
 								<td><b>Title<b></td>
@@ -24,9 +24,9 @@
 							</tr>
 							<% @client.notes.each do |note| %>
 							<tr>
-								<td><%= note.title %></td>
+								<td><%= link_to note.title, client_note_path(@client, @note) %></td>
 								<td style="width:400px;"><%= note.description %></td>
-								<td><%= note.created_at.strftime("%m/%d/%Y at %I:%M%p") %></td>
+								<td><%= note.created_at.strftime("%m/%d/%Y") %></td>
 							</tr>
 							<% end %>
 					  </tbody>

@@ -21,6 +21,7 @@ class NotesController < ApplicationController
 
   def show
   	@note = Note.find(params[:id])
+    @client = Client.find(params[:client_id])
   end
 
   # def edit

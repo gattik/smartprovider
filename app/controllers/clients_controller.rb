@@ -21,6 +21,7 @@ class ClientsController < ApplicationController
 	def show
 		@client = Client.find(params[:id])
 		@users = User.all
+		@note = Note.find(params[:id])
 	end
 
 	def add_user_to
