@@ -1,15 +1,15 @@
 Smartprovider::Application.routes.draw do
 
-  resources :follow_ups
-
-  resources :notes
-
   resources :users
 
   get '/vitals', to: "vitals#index"
+  get '/notes', to: "notes#index"
+  get '/follow_ups', to: "follow_ups#index"
 
   resources :clients do
-    resources :notes
+    resources :notes do
+      resources :follow_ups
+    end
     resources :vitals
     member do
       post 'add_user_to'

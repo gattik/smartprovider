@@ -3,12 +3,6 @@
   <div>
     <b class="text-left">Follow-ups</b>
   </div>
-  <% @client.notes.each do |note| %>
-    <% unless note.follow_ups == nil %>
-    <div class='checkbox'><%= note.follow_ups.first.task %></div>
-    <hr>
-    <% end %>
-  <% end %>
   <p><b>Health Card: </b><%= @client.hcn %></p>
   <p><b>Physician: </b><%= @client.physician %></p>
   <p><b>Physician Phone: </b><%= @client.physician_phone %></p>

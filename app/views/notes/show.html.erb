@@ -1,1 +1,5 @@
 <h1>Show me the notes</h1>
+
+<% @note.follow_ups.each do |follow_up| %>
+  <%= follow_up.task %>
+<% end %>
