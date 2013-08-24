@@ -2,7 +2,7 @@ require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
 
-   test "User first name can't be blank" do
+  test "User first name can't be blank" do
     user = User.new(first_name: "")
     assert user.invalid?
     assert user.errors[:first_name].any?
@@ -60,6 +60,18 @@ class UserTest < ActiveSupport::TestCase
                 email: "validemail@example.com")
     assert user.invalid?
     assert user.errors[:username].any?
+  end
+
+  test "User email must be a valid e-mail" do
+    user = User.new(username: "Valid Name",
+                first_name: "MyString",
+                last_name: "MyString",
+                designation: "MyString",
+                phone: "MyString",
+                password_digest: "gibberish!",
+                email: "invalidemail")
+    assert user.invalid?
+    assert user.errors[:email].any?
   end
 
 end
