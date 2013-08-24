@@ -4,7 +4,7 @@
   <div class="row-fluid">
     <div class="span6">
       <h3>Notes</h3>
-      <table class="span6; table" style="width:70%; float:left;">
+      <table class="span5; table" style="width:70%; float:left;">
         <tbody>
           <tr>
             <td><b>Client<b></td>
@@ -26,10 +26,11 @@
       </table>
     </div>    
   </div>
-  <div class="span4" style="float: right;">
+  <div class="span3" style="float: right;">
     <h4>Your Follow-ups</h4>
     <% @current_user.follow_ups.each do |follow_up| %>
       <%= follow_up.task %>
+      <hr>
     <% end %>
 
   </div>
