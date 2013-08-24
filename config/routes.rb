@@ -7,14 +7,20 @@ Smartprovider::Application.routes.draw do
   get '/follow_ups', to: "follow_ups#index"
 
   resources :clients do
-    resources :notes do
-      resources :follow_ups
-    end
+    resources :notes
     resources :vitals
     member do
       post 'add_user_to'
     end
   end
+
+  resources :notes, only: [:show] do
+    resources :follow_ups, only: [:new, :create]
+  end
+
+  resources :follow_ups, except: [:new, :create]
+
+
 
 
   # get /users?method=delete&id=4
