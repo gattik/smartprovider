@@ -1,21 +1,21 @@
 
-<div class="col-md-3" style="float:right; background-color:#eeeeee">
+<div class="col-lg-3" style="float:right; background-color:#eeeeee; height: 100%;">
   <br>
   <div class="photo">
     <%= image_tag @client.image %>
- <p style="clear: both;">Client info</p>>
   <div>
+    <h4 style="clear: both;">Client info</h4>
     <b class="text-left">Follow-ups</b>
     <% @client.notes.each do |note| %>
-  <div>
+    <div>
       <% note.follow_ups.each do |follow_up| %>
-    <%= follow_up.task %>
-    <%= follow_up.completed %>
-    <%= link_to "Click to complete", follow_up_path(follow_up, follow_up: { completed: true }), method: :patch %>
-  </div>
-  <% end %>
-  <% end %>
-  </div>
+      <%= follow_up.task %>
+      <%= follow_up.completed %>
+      <%= link_to "Click to complete", follow_up_path(follow_up, follow_up: { completed: true }), method: :patch %>
+    </div>
+      <% end %>
+      <% end %>
+    <hr>
   <p>Health Card: <%= @client.hcn %></p>
   <p><b>Physician: </b><%= @client.physician %></p>
   <p><b>Physician Phone: </b><%= @client.physician_phone %></p>
@@ -30,3 +30,5 @@
   class="pull-right">
   <%= link_to 'Edit', edit_client_path(@client), method: :get, class: "btn btn-small btn-success" %>
 </div>
+</div>
+

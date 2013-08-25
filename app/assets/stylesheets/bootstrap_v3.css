@@ -820,6 +820,7 @@ pre code {
   min-height: 1px;
   padding-right: 15px;
   padding-left: 15px;
+  height: 100%;
 }
 
 .col-1,
@@ -847,6 +848,7 @@ pre code {
 
 .col-3 {
   width: 25%;
+  height: 100%;
 }
 
 .col-4 {
@@ -1033,6 +1035,7 @@ pre code {
   }
   .col-lg-3 {
     width: 25%;
+    height: 100%;
   }
   .col-lg-4 {
     width: 33.33333333333333%;
