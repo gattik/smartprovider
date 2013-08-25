@@ -4,45 +4,46 @@
   <div class="row-fluid">
     <div class="span6" style="width:60%; float:left;">
       <h3>Vitals</h3>
-      <label class="control-label">Add a new vital:</label>
-      <%= form_for [@client, Vital.new] do |f| %>
-      <div class="row">    
-        <div class="col-md-4">     
-          <h4>Weight</h4>
-            <div> Weight (lbs) <br> <%= f.text_field :weight%></div>
-        </div>
-        <div class="col-md-4">
-          <h4> Height</h4>
-          <div> Height (ft. in. ) <br> <%= f.text_field :height%></div>
-        </div>
-        <div class="col-md-4">
-          <h4>Temperature</h4>
-          <div> Temperature (C)  <br> <%= f.text_field :temperature%> </div>
-        </div>   
-      </div>
-        <br>
-      <div class="row">
-        <div class="col-md-4">
-            <h4>Blood Pressure</h4>
-                <div> Systolic (mmHg) <br> <%= f.text_field :systolic%> </div>
-                <div> Diastolic (mmHg) <br> <%= f.text_field :diastolic%> </div>
-                <div> Heart Beats Per Minute <br> <%= f.text_field :beats%> </div>
-                <div> Location <br> <%= select_tag(:beats_location, options_for_select([['Right', 1], ['Left', 2]])) %>
-                </div>
-                <div> Condition <br> <%= select_tag(:beats_condition, options_for_select([['Sitting', 1], ['Standing', 2], ['Lying', 3]])) %> </div>
-            </div>
-            <div class="col-md-4">
-              <h4>Breathing</h4>
-                <div> Breaths Per Minute  <br> <%= f.text_field :breaths%> </div>
-                <div> Condition <br> <%= select_tag(:breaths_condition, options_for_select([['At Rest', 1], ['Walking', 2],['Running', 3]])) %> </div>
-                <div> Description  <br> <%= select_tag(:beats_description, options_for_select([['Normal', 1], ['Shallow', 2], ['Inspiratory Stridor', 3], ['Expiratory Stridor', 4], ['Apnea', 5], ['Cheyne-strokes', 6], ['Wheezy', 7], ['Orthopenea', 8]])) %></div>
-            </div>
-            <div class="col-md-4">
-              <h4>Blood Sugar</h4>
-                <div> Blood Sugar (mmol/l)  <br> <%= f.text_field :blood_sugar%> </div>
-                <div> Condition <br> <%= select_tag(:bs_condition, options_for_select([['Fasting', 1], ['Not Fasting', 2], ['After Meal', 3]])) %> </div>
-            </div>
+      <label class="control-label well"><h4>Add new vitals:</h4>
+        <%= form_for [@client, Vital.new] do |f| %>
+        <div class="row">    
+          <div class="col-md-4">     
+            <h4>Weight</h4>
+              <div> Weight (lbs) <br> <%= f.text_field :weight%></div>
           </div>
+          <div class="col-md-4">
+            <h4> Height</h4>
+            <div> Height (ft. in. ) <br> <%= f.text_field :height%></div>
+          </div>
+          <div class="col-md-4">
+            <h4>Temperature</h4>
+            <div> Temperature (C)  <br> <%= f.text_field :temperature%> </div>
+          </div>   
+        </div>
+          <br>
+        <div class="row">
+          <div class="col-md-4">
+              <h4>Blood Pressure</h4>
+                  <div> Systolic (mmHg) <br> <%= f.text_field :systolic%> </div>
+                  <div> Diastolic (mmHg) <br> <%= f.text_field :diastolic%> </div>
+                  <div> Heart Beats Per Minute <br> <%= f.text_field :beats%> </div>
+                  <div> Location <br> <%= select_tag(:beats_location, options_for_select([['Right', 1], ['Left', 2]])) %>
+                  </div>
+                  <div> Condition <br> <%= select_tag(:beats_condition, options_for_select([['Sitting', 1], ['Standing', 2], ['Lying', 3]])) %> </div>
+              </div>
+              <div class="col-md-4">
+                <h4>Breathing</h4>
+                  <div> Breaths Per Minute  <br> <%= f.text_field :breaths%> </div>
+                  <div> Condition <br> <%= select_tag(:breaths_condition, options_for_select([['At Rest', 1], ['Walking', 2],['Running', 3]])) %> </div>
+                  <div> Description  <br> <%= select_tag(:beats_description, options_for_select([['Normal', 1], ['Shallow', 2], ['Inspiratory Stridor', 3], ['Expiratory Stridor', 4], ['Apnea', 5], ['Cheyne-strokes', 6], ['Wheezy', 7], ['Orthopenea', 8]])) %></div>
+              </div>
+              <div class="col-md-4">
+                <h4>Blood Sugar</h4>
+                  <div> Blood Sugar (mmol/l)  <br> <%= f.text_field :blood_sugar%> </div>
+                  <div> Condition <br> <%= select_tag(:bs_condition, options_for_select([['Fasting', 1], ['Not Fasting', 2], ['After Meal', 3]])) %> </div>
+              </div>
+            </div>
+        </label>
               
               <br>
          <%= f.submit "Add vitals", class: "btn btn-small btn-primary" %>
