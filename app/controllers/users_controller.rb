@@ -4,6 +4,7 @@ class UsersController < ApplicationController
 
   def index
   	@users = User.all
+    @json = @current_user.clients.to_gmaps4rails
   end
 
   def new

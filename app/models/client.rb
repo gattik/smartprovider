@@ -15,5 +15,4 @@ class Client < ActiveRecord::Base
   def gmaps4rails_address
     "#{self.street}, #{self.city}, #{self.provence}"
   end
-
 end
