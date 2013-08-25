@@ -7,13 +7,18 @@ one:
   gender: Male
   hcn: 1234567891HN
   diagnosis: MyText
-  address: MyString
+  street: MyString
+  city: MyString
+  province: MyString
   physician: MyString
   physician_phone: MyString
   advanced_directives: MyText
   contact_name: MyString
   contact_phone: MyString
   contact_relationship: MyString
+  latitude: 37.639417
+  longitude: -122.409389
+  gmaps: true
 
 two:
   first_name: MyString
@@ -21,11 +26,19 @@ two:
   hcn: MyString
   date_of_birth: "Tue, 20 Aug 2013"
   gender: "Male"
+  hcn: 1234567891HN
+  diagnosis: MyText
+  street: MyString
+  city: MyString
+  province: MyString
+  physician: MyString
   physician: MyString
   physician_phone: MyString
   diagnosis: MyText
   advanced_directives: MyText
-  address: MyString
   contact_name: MyString
   contact_phone: MyString
   contact_relationship: MyString
+  latitude: 37.639417
+  longitude: -122.409389
+  gmaps: true

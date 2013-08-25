@@ -5,7 +5,7 @@ class Client < ActiveRecord::Base
 	has_many :notes
 	has_many :vitals
 
-	validates :first_name, :last_name, :date_of_birth, :gender, :hcn, :diagnosis, :street, :city, :provence, presence: true
+	validates :first_name, :last_name, :date_of_birth, :gender, :hcn, :diagnosis, :street, :city, :province, presence: true
   validates_uniqueness_of :hcn
   validates :hcn, format: { with: /[0-9]{10}+[A-Z]{2}/ }
 
@@ -14,6 +14,6 @@ class Client < ActiveRecord::Base
   acts_as_gmappable
 
   def gmaps4rails_address
-    "#{self.street}, #{self.city}, #{self.provence}"
+    "#{self.street}, #{self.city}, #{self.province}"
   end
 end
