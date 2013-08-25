@@ -5,7 +5,7 @@ class Client < ActiveRecord::Base
 	has_many :notes
 	has_many :vitals
 
-	validates :first_name, :last_name, :date_of_birth, :gender, :hcn, :diagnosis, :address, presence: true
+	validates :first_name, :last_name, :date_of_birth, :gender, :hcn, :diagnosis, :street, :city, :provence, presence: true
   validates_uniqueness_of :hcn
 
   mount_uploader :image, ImageUploader
@@ -13,7 +13,7 @@ class Client < ActiveRecord::Base
   acts_as_gmappable
 
   def gmaps4rails_address
-    "#{self.address}"
+    "#{self.street}, #{self.city}, #{self.provence}"
   end
 
 end
