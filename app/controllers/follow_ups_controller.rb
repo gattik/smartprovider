@@ -24,7 +24,7 @@ class FollowUpsController < ApplicationController
   end
 
   def update
-    @follow_up = FollowUp.find(params[:follow_up_id])
+    @follow_up = FollowUp.find(params[:id])
     @follow_up.update(follow_up_params)
     @follow_up.save
     redirect_to follow_ups_path
