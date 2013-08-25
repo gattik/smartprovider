@@ -39,6 +39,8 @@ gem 'dynamic_form'
 
 gem 'carrierwave'
 
+gem 'gmaps4rails'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 

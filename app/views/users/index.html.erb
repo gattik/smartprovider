@@ -1,4 +1,3 @@
-
 <div class="container">
   <h1>Latest Activity</h1>
     <div class="row">    
@@ -42,5 +41,5 @@
   $('.nav a:contains("Glance")').parent().addClass('active');
 </script>
 
-
-
+<%= gmaps4rails(@json) %>
+<%= yield :scripts %>
