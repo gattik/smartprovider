@@ -1,9 +1,9 @@
-<h1>Client Info</h1>
- <label class="checkbox">
-  <div>
-    <b class="text-left">Follow-ups</b>
+<div class="col-md-3" style="float:right; background-color:#eeeeee">
+  <br>
+  <div class="photo">
+    <%= image_tag @client.image %>
   </div>
-
+  <p style="clear: both;">Client info</p>
   <p>Health Card: <%= @client.hcn %></p>
   <p><b>Physician: </b><%= @client.physician %></p>
   <p><b>Physician Phone: </b><%= @client.physician_phone %></p>
@@ -13,6 +13,6 @@
   <p><b>Contact: </b><%= @client.contact_name %></p>
   <p><b>Contact Relationship: </b><%= @client.contact_relationship %></p>
   <p><b>Contact Phone: </b><%= @client.contact_phone %></p>
-  <img src="https://s3.amazonaws.com/jetstrap-site/images/website/index/what_icon.png"
   class="pull-right">
   <%= link_to 'Edit', edit_client_path(@client), method: :get, class: "btn btn-small btn-success" %>
+</div>

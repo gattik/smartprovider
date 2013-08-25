@@ -1,8 +1,11 @@
+<body>
 <div class="container">
-<h1> <%= @client.first_name %> </h1>
-<%= render "layouts/client_dashboard" %>
-  <div class="row-fluid">
-    <div class="span6" style="width:60%; float:left;">
+  <div class="row">
+    <div class="col-md-6" style="float:left">  
+  		<h1> <%= @client.first_name %> </h1>
+    </div>
+  	<%= render "layouts/client_dashboard" %>  
+    <div class="col-md-6" style="float:left">
       <h3>Notes</h3>
         <label class="control-label">Add a new note:</label>
         <%= form_for [@client, Note.new] do |f| %>
@@ -12,31 +15,25 @@
 			<% end %>
       <br>
       <br>
-    	<div class="row-fluid">
-      	<div class="span6">
-          <h4>Recent Notes</h4>
-				  <table class="table" style="float:left;">
-					  <tbody>
-							<tr>
-								<td><b>Title<b></td>
-								<td><b>Note<b></td>
-								<td><b>Date<b></td>
-							</tr>
+      <h4>Recent Notes</h4>
+				<table class="table" style="float:left;">
+					<tbody>
+					  <tr>
+							<td><b>Title<b></td>
+							<td><b>Note<b></td>
+							<td><b>Date<b></td>
+						</tr>
 							<% @client.notes.each do |note| %>
-							<tr>
-								<td><%= link_to note.title, client_note_path(@client, @note) %></td>
-								<td style="width:400px;"><%= note.description %></td>
-								<td><%= note.created_at.strftime("%m/%d/%Y") %></td>
-							</tr>
+						<tr>
+							<td><%= link_to note.title, client_note_path(@client, @note) %></td>
+							<td style="width:400px;"><%= note.description %></td>
+							<td><%= note.created_at.strftime("%m/%d/%Y") %></td>
+						</tr>
 							<% end %>
-					  </tbody>
-				  </table>
-			  </div>          
-      </div>
-    </div>
-  <div class="span4" style="float: right;">
-  <%= render 'clients/client_info' %>
-    </div>
+					</tbody>
+				</table>
+		</div>
+			<%= render 'clients/client_info' %>        
   </div>
 </div>
 
