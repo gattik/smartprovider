@@ -36,11 +36,13 @@
 			  </div>
 			  <div class="span4" style="float: right;">
 				  <h3>Follow-ups</h3>
-				   <label class="checkbox">
-					  <input type="checkbox">Remember me</label>
-					    <label class="checkbox">
-					  <input type="checkbox">Remember me</label>
-					    <hr>
+						<% @current_user.follow_ups.each do |follow_up| %>
+  					<div>
+					    <%= follow_up.task %>
+					    <%= follow_up.completed %>
+					    <%= link_to "Click to complete task", follow_up_path(follow_up, follow_up: { completed: true }), method: :patch %>
+  					</div>
+  					<% end %>
 				</div>
       </div>
     </div>

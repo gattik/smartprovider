@@ -2,6 +2,15 @@
  <label class="checkbox">
   <div>
     <b class="text-left">Follow-ups</b>
+    <% @client.notes.each do |note| %>
+  <div>
+      <% note.follow_ups.each do |follow_up| %>
+    <%= follow_up.task %>
+    <%= follow_up.completed %>
+    <%= link_to "Click to complete", follow_up_path(follow_up, follow_up: { completed: true }), method: :patch %>
+  </div>
+  <% end %>
+  <% end %>
   </div>
 
   <p>Health Card: <%= @client.hcn %></p>
