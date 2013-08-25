@@ -1,6 +1,7 @@
 <div class="container" >
 	<div class="span6" style="width:70%; float:left;">
 	<%= form_for @client, html: {multipart: true} do |f| %>
+	<%= f.error_messages %>
 
 	<div>First Name: 
 		<br>
