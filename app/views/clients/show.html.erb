@@ -24,11 +24,11 @@
 							<td><b>Date<b></td>
 						</tr>
 							<% @client.notes.each do |note| %>
-						<tr>
-							<td><%= link_to note.title, client_note_path(@client, @note) %></td>
-							<td style="width:400px;"><%= note.description %></td>
-							<td><%= note.created_at.strftime("%m/%d/%Y") %></td>
-						</tr>
+							<tr>
+								<td><%= link_to note.title, client_note_path(note.client_id, note.id) %></td>
+								<td style="width:400px;"><%= note.description %></td>
+								<td><%= note.created_at.strftime("%m/%d/%Y") %></td>
+							</tr>
 							<% end %>
 					</tbody>
 				</table>
@@ -41,3 +41,10 @@
 <script>
   $('.nav a:contains("Notes")').parent().addClass('active');
 </script>
+Assigned Users
+<% @client.users.each do |user| %>
+  <div>
+    <%= user.first_name %>
+    <%= user.last_name %>
+  </div>
+<% end %>

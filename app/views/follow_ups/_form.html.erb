@@ -1,4 +1,4 @@
-<%= form_for :follow_up, url: {action: "create", id: @follow_up} do |f| %>
+<%= form_for @follow_up, url: note_follow_ups_path, html: {method: :post} do |f| %>
 
 <div>
   Task: <%= f.text_field :task %>

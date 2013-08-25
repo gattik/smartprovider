@@ -5,7 +5,16 @@
 
 <br>
 
-<div><%= render 'follow_ups/form' %></div>
+<%= form_for :follow_up, url: note_follow_ups_path(@note), html: {method: :post} do |f| %>
+
+<div>
+  Task: <%= f.text_field :task %>
+</div>
+<div>Assigned to: 
+  <%= select_tag 'user_id', options_from_collection_for_select(User.all, "id", "first_name") %></div>
+
+<div><%= f.submit "Save", class: "btn btn-small btn-primary"%></div>
+<% end %>
 <br>
 
 <% @note.follow_ups.each do |follow_up| %>
