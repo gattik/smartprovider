@@ -1,5 +1,6 @@
-<h1> <%= @client.first_name %> </h1>
+
 <div class="container" >
+	<h1> <%= @client.first_name %> </h1>
 	  <%= render "layouts/client_dashboard" %>
   <div class="row-fluid">
 	  <div class="span6" style="width:60%; float:left;">
@@ -36,4 +37,7 @@
   </div>
 </div>
 <br>
+<script>
+  $('.nav a:contains("Vitals")').parent().addClass('active');
+</script>
     
