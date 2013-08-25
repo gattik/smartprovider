@@ -719,8 +719,8 @@ pre code {
 }
 
 .container {
-  margin-right: auto;
-  margin-left: auto;
+  margin-right: 50px;
+  margin-left: 180px;
   border-radius: 15px;
   background: #ffffff; 
   
