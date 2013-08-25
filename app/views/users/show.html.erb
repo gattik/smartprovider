@@ -11,8 +11,8 @@
 			<p>Email: <%= @current_user.email %></p>
 			<%= button_to 'Edit', edit_user_path(@current_user), method: :get, class: "btn btn-success btn-small" %> <br>
 		</div>
-		<div class="col-lg-9" style="float:left"> 
-    	<h3>Your Recent Activities</h3>
+		<div class="col-lg-9 well" style="float:left"> 
+    	<h3>My Recent Activities</h3>
       <h4>Notes</h4>
 			<table class="table">
 				<tbody>
@@ -34,9 +34,7 @@
 					<% end %>
 			 </tbody>
 			</table>
-		</div>
-		<div class="col-lg-9" style="float:right"> 
-			<h4>Outstanding Follow-ups</h4>
+			<h4>Follow-ups</h4>
 			<table class="table" style="float:left;">
 				<tbody>
 				  <tr>
