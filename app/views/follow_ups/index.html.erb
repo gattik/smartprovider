@@ -3,6 +3,8 @@
 <% @current_user.follow_ups.each do |follow_up| %>
   <div>
     <%= follow_up.task %>
+    <%= link_to follow_up.note.title, client_note_path(follow_up.note.client_id, follow_up.note_id) %>
+    <%= link_to "#{follow_up.note.client.first_name} #{follow_up.note.client.last_name}", client_path(follow_up.note.client)%>
     <%= follow_up.completed %>
     <%= link_to "Click to complete task", follow_up_path(follow_up, follow_up: { completed: true }), method: :patch %>
   </div>
