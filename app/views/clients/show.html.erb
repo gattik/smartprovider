@@ -1,11 +1,10 @@
-<body>
 <div class="container">
   <div class="row">
-    <div class="col-lg-6" style="float:left">  
+    <div class="col-lg-9" style="float:left">  
   		<h1> <%= @client.first_name %> </h1>
     </div>
   	<%= render "layouts/client_dashboard" %>  
-    <div class="col-lg-6" style="float:left">
+    <div class="col-lg-9" style="float:left">
       <h3>Notes</h3>
         <label class="control-label">Add a new note:</label>
         <%= form_for [@client, Note.new] do |f| %>
@@ -32,6 +31,7 @@
 							<% end %>
 					</tbody>
 				</table>
+			<hr>
 		</div>
 			<%= render 'clients/client_info' %>        
   </div>
@@ -41,10 +41,6 @@
 <script>
   $('.nav a:contains("Notes")').parent().addClass('active');
 </script>
-Assigned Users
-<% @client.users.each do |user| %>
-  <div>
-    <%= user.first_name %>
-    <%= user.last_name %>
-  </div>
-<% end %>
+
+<%= gmaps4rails(@json) %>
+<%= yield :scripts %>

@@ -39,10 +39,20 @@ class ClientTest < ActiveSupport::TestCase
     assert client.errors[:diagnosis].any?
 	end
 
-	test "client address can't be blank" do
-  	client = Client.new(address: "")
+  test "client street address can't be blank" do
+    client = Client.new(street: "")
+    assert client.invalid?
+    assert client.errors[:street].any?
+  end
+   test "client city can't be blank" do
+    client = Client.new(city: "")
+    assert client.invalid?
+    assert client.errors[:city].any?
+  end
+  	test "client province can't be blank" do
+  	client = Client.new(province: "")
   	assert client.invalid?
-    assert client.errors[:address].any?
+    assert client.errors[:province].any?
 	end
 
   test "client HCN should be unique" do 
@@ -55,7 +65,9 @@ class ClientTest < ActiveSupport::TestCase
                 physician_phone: "MyString",
                 diagnosis: "MyText",
                 advanced_directives: "MyText",
-                address: "MyString",
+                street: "MyString",
+                city: "MyString",
+                province: "MyString",
                 contact_name: "MyString",
                 contact_phone: "MyString",
                 contact_relationship: "MyString")
@@ -73,7 +85,9 @@ class ClientTest < ActiveSupport::TestCase
                 physician_phone: "MyString",
                 diagnosis: "MyText",
                 advanced_directives: "MyText",
-                address: "MyString",
+                street: "MyString",
+                city: "MyString",
+                province: "MyString",
                 contact_name: "MyString",
                 contact_phone: "MyString",
                 contact_relationship: "MyString")

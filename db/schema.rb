@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130822045952) do
+ActiveRecord::Schema.define(version: 20130825044029) do
 
   create_table "cases", force: true do |t|
     t.integer  "user_id"
@@ -33,18 +33,24 @@ ActiveRecord::Schema.define(version: 20130822045952) do
     t.string   "physician_phone"
     t.text     "diagnosis"
     t.text     "advanced_directives"
-    t.string   "address"
     t.string   "contact_name"
     t.string   "contact_phone"
     t.string   "contact_relationship"
     t.string   "image"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.boolean  "gmaps"
+    t.string   "street"
+    t.string   "city"
+    t.string   "province"
   end
 
   create_table "follow_ups", force: true do |t|
     t.string   "task"
-    t.boolean  "completed",  default: false
+    t.boolean  "completed",        default: false
+    t.integer  "assigned_user_id"
     t.integer  "user_id"
     t.integer  "note_id"
     t.datetime "created_at"
