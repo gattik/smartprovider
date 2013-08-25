@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130825030703) do
+ActiveRecord::Schema.define(version: 20130825044029) do
 
   create_table "cases", force: true do |t|
     t.integer  "user_id"
@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 20130825030703) do
     t.boolean  "gmaps"
     t.string   "street"
     t.string   "city"
-    t.string   "provence"
+    t.string   "province"
   end
 
   create_table "follow_ups", force: true do |t|

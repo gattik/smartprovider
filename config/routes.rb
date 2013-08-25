@@ -20,9 +20,6 @@ Smartprovider::Application.routes.draw do
 
   resources :follow_ups, except: [:new, :create]
 
-
-
-
   # get /users?method=delete&id=4
   # get /clients/4/add_user/130
   # params[:client_id]
