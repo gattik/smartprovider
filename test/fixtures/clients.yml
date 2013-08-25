@@ -5,7 +5,7 @@ one:
   last_name: MyString
   date_of_birth: "Tue, 20 Aug 2013"
   gender: Male
-  hcn: hello
+  hcn: 1234567891HN
   diagnosis: MyText
   address: MyString
   physician: MyString

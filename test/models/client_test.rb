@@ -45,7 +45,7 @@ class ClientTest < ActiveSupport::TestCase
     assert client.errors[:address].any?
 	end
 
-  test "client HCN should be unique " do 
+  test "client HCN should be unique" do 
     client = Client.new(hcn: clients(:one).hcn,
                 first_name: "MyString",
                 last_name: "MyString",
@@ -61,6 +61,24 @@ class ClientTest < ActiveSupport::TestCase
                 contact_relationship: "MyString")
     assert client.invalid?
     assert client.errors[:hcn].any?
-end
+  end
+
+  test "client HCN must be valid format" do
+    client = Client.new(hcn: "hello",
+                first_name: "MyString",
+                last_name: "MyString",
+                date_of_birth: "2013-08-20",
+                gender: "Male",
+                physician: "MyString",
+                physician_phone: "MyString",
+                diagnosis: "MyText",
+                advanced_directives: "MyText",
+                address: "MyString",
+                contact_name: "MyString",
+                contact_phone: "MyString",
+                contact_relationship: "MyString")
+    assert client.invalid?
+    assert client.errors[:hcn].any?
+  end
 
 end
