@@ -1,5 +1,14 @@
+<h5>This client can be viewed by</h5>
+<% @client.users.each do |user| %>
+  <div>
+    <%= user.first_name %>
+    <%= user.last_name %>
+  </div>
+<% end %>
+
 <%= form_tag(add_user_to_client_path, method: :post) do %>
 	<%= flash[:error] %>
 	<%= submit_tag "Add User", class: "btn btn-small btn-primary" %>
   <%= select_tag 'user_id', options_from_collection_for_select(User.all, "id", "first_name") %>
+
 <% end %>
