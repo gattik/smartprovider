@@ -22,6 +22,7 @@ class ClientsController < ApplicationController
 		@client = Client.find(params[:id])
 		@users = User.all
 		@note = Note.find(params[:id])
+		@json = Client.all.to_gmaps4rails
 	end
 
 	def add_user_to

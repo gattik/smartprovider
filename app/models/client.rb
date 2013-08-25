@@ -10,4 +10,10 @@ class Client < ActiveRecord::Base
 
   mount_uploader :image, ImageUploader
 
+  acts_as_gmappable
+
+  def gmaps4rails_address
+    "#{self.address}"
+  end
+
 end
