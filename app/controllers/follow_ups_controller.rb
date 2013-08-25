@@ -16,10 +16,10 @@ class FollowUpsController < ApplicationController
     @follow_up.user = User.find(params[:user_id])
     if @follow_up.save
       flash[:error] = "Follow up successfully assigned."
-      redirect_to client_path(@client)
+      redirect_to client_path(@follow_up.note.client_id)
     else
       flash[:error] = "Follow up failed!"
-      redirect_to client_path(@client)
+      redirect_to client_path(@follow_up.note.client_id)
     end
   end
 
