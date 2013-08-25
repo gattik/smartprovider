@@ -1,4 +1,3 @@
-<body>
 <div class="container">
   <div class="row">
     <div class="col-lg-9" style="float:left">  
@@ -42,3 +41,6 @@
 <script>
   $('.nav a:contains("Notes")').parent().addClass('active');
 </script>
+
+<%= gmaps4rails(@json) %>
+<%= yield :scripts %>
