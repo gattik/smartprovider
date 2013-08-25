@@ -15,8 +15,8 @@
 					<% @notes.each do |note| %>
 					<tr>
 						<td><%= link_to note.client.first_name, client_path(note.client) %></td>
-						<td><%= note.title %></td>
-						<td style="width:400px;"><%= note.description %></td>
+						<td><%= link_to note.title, client_note_path(note.client, note.id) %></td>
+						<td style="width:400px;"><%= link_to note.description, client_note_path(note.client, note.id) %></td>
 						<td><%= note.created_at.strftime("%m/%d/%Y at %I:%M%p") %></td>
 					</tr>
 					<% end %>
