@@ -49,8 +49,7 @@ ActiveRecord::Schema.define(version: 20130825030703) do
 
   create_table "follow_ups", force: true do |t|
     t.string   "task"
-    t.boolean  "completed",        default: false
-    t.integer  "assigned_user_id"
+    t.boolean  "completed",  default: false
     t.integer  "user_id"
     t.integer  "note_id"
     t.datetime "created_at"
