@@ -1,1 +1,23 @@
+<div class="container">
+  <h1> <%= @client.first_name %> </h1>
+  <%= render "layouts/client_dashboard" %>
+  <div class="row-fluid">
+    <div class="span6" style="width:60%; float:left;">
+      <h3>Vitals</h3>
+      <label class="control-label well"><h4>Add new vitals:</h4>
+
+<% if flash[:notice] %>
+  <p><%= flash[:notice] %></p>
+<% else %>
+  <p><%= flash[:error] %></p>
+<% end %>
+
 <%= render 'form' %>
+
+    </div>
+  </div>
+ <div>
+
+<script>
+  $('.nav a:contains("Vitals")').parent().addClass('active');
+</script>

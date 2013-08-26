@@ -15,9 +15,12 @@ class VitalsController < ApplicationController
   def create
     @vital = Vital.new(vital_params)
     @vital.client = Client.find(params[:client_id])
-    @vital.save
-
-    redirect_to client_path(@vital.client)
+    if @vital.save
+      flash[:notice] = "Vitals successfully created."
+    else
+      flash[:error] = "Error. Must enter at least one value."
+    end
+    redirect_to new_client_vital_path(@vital.client)
   end
 
   def show

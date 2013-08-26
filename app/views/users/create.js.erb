@@ -1,6 +1,0 @@
-<% if @user.valid? %>
-	alert(<%= escape_javascript link_to login_path %>);
-<% else %>
-	$('#createmodal').prepend("<%= escape_javascript render partial: 'error' %>");
-
-<% end %>
