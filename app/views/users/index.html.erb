@@ -31,14 +31,11 @@
         <%= follow_up.task %>
         <hr>
       <% end %>
-      <%= gmaps4rails(@json) %>
-      <%= yield :scripts %>
     </div>  
   </div>  
+  <%= gmaps4rails(@json) %>
 </div>
 
 <script>
   $('.nav a:contains("Glance")').parent().addClass('active');
 </script>
-
-
