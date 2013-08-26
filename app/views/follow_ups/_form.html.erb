@@ -1,7 +1,7 @@
 <div class= container>
-	<%= simple_form_for @follow_up, url: note_follow_ups_path, html: {method: :post} do |f| %>
+	<%= form_for @follow_up, url: note_follow_ups_path, html: {method: :post} do |f| %>
 
-	<%= f.input :task %>
+	<%= f.input :task%>
 	<%= f.input 'user_id', options_from_collection_for_select(User.all, "id", "first_name") %>
 	<%= f.submit "Save", class: "btn btn-small btn-primary"%>
 	<% end %>

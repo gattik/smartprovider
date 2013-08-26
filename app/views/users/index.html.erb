@@ -27,7 +27,7 @@
     </div>
     <div class="col-lg-3 well" style="float:right;">
       <h4>My Follow-ups</h4>
-      <table class="table" style="float:left;">
+      <table class="table">
         <tbody>
           <tr>
             <td><b>Task<b></td>
@@ -41,10 +41,12 @@
           <% end %>
         </tbody>
       </table>
+        <%= gmaps4rails(@json) %>
     </div>  
   </div>  
-  <%= gmaps4rails(@json) %>
 </div>
+<br>
+<br>
 
 <script>
   $('.nav a:contains("Glance")').parent().addClass('active');
