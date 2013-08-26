@@ -1,38 +1,42 @@
-<div class="container">
-  <div class="hero-unit">
-    <h1>
+<div class="container-narrow">
+  <div class="masthead">
+    <h3><p class="text-muted">SmartProvider
+    </p>
+    </h3>
+  </div>
+  <hr>
+  <div class="well">
+    <h2>
       Welcome back!
-    </h1>
+    </h2>
     <p>
       SmartProvider is here to help you
     </p>
-  </div>
-  <br>
-  <div class="container">
+    <%= form_for @user, url: login_path do |f| %>
+    <%= flash[:error] %>
 
-  <%= form_for @user, url: login_path do |f| %>
-  <%= flash[:error] %>
-
-  <div>
-    <%= f.label :email %>
+    <div>
+      <%= f.label :email %>
+      <br>
+      <%= f.text_field :email, class: 'txtfield'%>
+    </div>
+    <div>
+      <%= f.label :password %>
+      <br>
+      <%= f.password_field :password, class: 'txtfield' %>
+    </div>
     <br>
-    <%= f.text_field :email %>
+    <div><%= f.submit "Login", class: "btn btn-primary" %>
+    </div>
+    <% end %>
   </div>
-
-  <div>
-    <%= f.label :password %>
-    <br>
-    <%= f.password_field :password %>
+  <div class="row-fluid marketing">
   </div>
-  <br>
-  <div><%= f.submit "Login", class: "btn btn-primary" %></div>
-<% end %>
-
-<br>
   <hr>
   <div class="footer">
     <p>
       © SmartProvider 2013
     </p>
   </div>
+
 </div>
