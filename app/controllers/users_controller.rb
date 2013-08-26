@@ -14,16 +14,10 @@ class UsersController < ApplicationController
   def create
   	@user = User.new(user_params)
   	if @user.save
-      respond_to do |format|
-        UserMailer.welcome_email(@user).deliver
-        format.html { redirect_to login_path }
-        format.js 
-      end
+      UserMailer.welcome_email(@user).deliver
+      redirect_to login_path
     else
-      respond_to do |format|
-        format.html { render action: :new }
-        format.js
-      end
+      render action: :new
     end
   end
 
