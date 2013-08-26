@@ -1,25 +1,23 @@
+<div class="container">
 
+
+<%= simple_form_for :follow_up, url: note_follow_ups_path(@note), html: {method: :post} do |f| %>
 <h1><%= @note.title %></h1>
 <div><%= @note.description %></div>
 <div><%= @note.created_at.strftime("%m/%d/%Y at %I:%M%p") %></div>
 
 <br>
+ <%= f.input :task %>
+ <p style="margin-left: 30px"><b>Assigned to</b>
+ <%= select_tag 'user_id', options_from_collection_for_select(User.all, "id", "first_name") %></p>
 
-<%= form_for :follow_up, url: note_follow_ups_path(@note), html: {method: :post} do |f| %>
-
-<div>
-  Task: <%= f.text_field :task %>
-</div>
-<div>Assigned to: 
-  <%= select_tag 'user_id', options_from_collection_for_select(User.all, "id", "first_name") %></div>
-
-<div><%= f.submit "Save", class: "btn btn-small btn-primary"%></div>
+<%= f.submit "Save", class: "btn btn-small btn-primary"%>
 <% end %>
-<br>
+
 
 <% @note.follow_ups.each do |follow_up| %>
-  <div><%= follow_up.task %><div>
+  <%= follow_up.task %>
 <% end %>
 
-
+</div>
 

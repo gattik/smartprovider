@@ -41,6 +41,10 @@ gem 'carrierwave'
 
 gem 'gmaps4rails'
 
+gem 'avatar'
+
+gem 'simple_form'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
