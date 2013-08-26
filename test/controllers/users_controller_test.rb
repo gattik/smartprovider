@@ -30,7 +30,7 @@ class UsersControllerTest < ActionController::TestCase
 
   test "should not be able to get edit if user is not logged in" do
     get :edit, id: users(:one).id
-    assert_redirected_to login_path
+    assert_redirected_to root_path
   end
 
   #tests for if user is logged in

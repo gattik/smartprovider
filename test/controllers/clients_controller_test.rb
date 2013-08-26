@@ -4,10 +4,10 @@ class ClientsControllerTest < ActionController::TestCase
 
   test "should not be able to do anything if not logged in" do
     get :index
-    assert_redirected_to login_path
+    assert_redirected_to root_path
 
     get :new
-    assert_redirected_to login_path
+    assert_redirected_to root_path
   end
 
   test "should show all clients" do

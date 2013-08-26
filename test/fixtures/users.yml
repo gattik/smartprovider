@@ -5,7 +5,7 @@ one:
   last_name: MyString
   designation: MyString
   phone: MyString
-  email: ronaldvictorino@gmail.com
+  email: frederick.rangel@gmail.com
   password_digest: gibberish!
   username: validuser
 

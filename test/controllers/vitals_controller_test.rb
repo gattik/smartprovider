@@ -6,7 +6,7 @@ class VitalsControllerTest < ActionController::TestCase
   test "should not be able to do anything if not logged in" do
     session[:client_id] = clients(:one).id
     get :index, client_id: vitals(:one).id
-    assert_redirected_to login_path
+    assert_redirected_to root_path
   end
 
   test "should get index" do

@@ -26,7 +26,7 @@ two:
   hcn: MyString
   date_of_birth: "Tue, 20 Aug 2013"
   gender: "Male"
-  hcn: 1234567891HN
+  hcn: 0004567891HN
   diagnosis: MyText
   street: MyString
   city: MyString
