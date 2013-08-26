@@ -5,7 +5,7 @@
         <div class="well sidebar-nav">
           <ul class="nav nav-list">
             <li>
-            	<%= link_to "Glance", users_path %>
+            	<%= link_to "Glance", { controller: :users, action: :index } %>
             </li>
             <li>
             	<%= link_to "Clients", clients_path %>

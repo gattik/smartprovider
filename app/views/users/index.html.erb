@@ -42,8 +42,10 @@
         </tbody>
       </table>
     </div>  
-  </div>  
-  <%= gmaps4rails(@json) %>
+  </div> 
+  <% unless @current_user.clients.count == 0 %>
+    <%= gmaps4rails(@json) %>
+  <% end %>
 </div>
 
 <script>
