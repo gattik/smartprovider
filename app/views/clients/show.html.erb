@@ -7,6 +7,17 @@
     <div class="col-lg-9" style="float:left">
       <h3>Notes</h3>
         <label class="control-label">Add a new note:</label>
+
+        <% if flash[:notice] %>
+					<h3><span class="label label-success">
+	  				<%= flash[:notice] %>
+	  			</span></h3>
+				<% elsif flash[:error] %>
+					<h3><span class="label label-danger">
+  					<%= flash[:error] %>
+  				</span></h3>
+				<% end %>
+				
         <%= form_for [@client, Note.new] do |f| %>
 				<div style="width: 200px"> Title <br> <%= f.text_field :title, class: 'txtfield'%></div>
 			  <div> Description <br> <%= f.text_area :description, rows: 4, cols: 80, class: 'textarea' %></div> <br>

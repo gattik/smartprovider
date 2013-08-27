@@ -34,9 +34,9 @@
             <td><b>Complete<b></td>
           </tr>
             <% @current_user.follow_ups.each do |follow_up| %>
-          <tr>
+          <tr data-task-id="<%= follow_up.id %>">
+            <td class="complete-task">Click</td>
             <td><%= follow_up.task %></td>
-            <td><%= link_to "Click to complete task", follow_up_path(follow_up, follow_up: { completed: true }), method: :patch %></td>
           </tr>
           <% end %>
         </tbody>

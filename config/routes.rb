@@ -2,10 +2,6 @@ Smartprovider::Application.routes.draw do
 
   resources :users
 
-  get '/vitals', to: "vitals#index"
-  get '/notes', to: "notes#index"
-  get '/follow_ups', to: "follow_ups#index"
-
   resources :clients do
     resources :notes
     resources :vitals
@@ -14,11 +10,15 @@ Smartprovider::Application.routes.draw do
     end
   end
 
-  resources :notes, only: [:show] do
+  resources :notes do
     resources :follow_ups, only: [:new, :create]
   end
 
-  resources :follow_ups, except: [:new, :create]
+  resources :follow_ups do
+    member do
+      get :complete
+    end
+  end
 
   # get /users?method=delete&id=4
   # get /clients/4/add_user/130
