@@ -14,7 +14,11 @@ class NotesController < ApplicationController
     @note = Note.new(note_params)
     @note.client = Client.find(params[:client_id])
     @note.user = @current_user
-    @note.save
+    if @note.save
+      flash[:notice] = "Note successfully created."
+    else
+      flash[:error] = "Note cannot be blank."
+    end
 
     redirect_to client_path(@note.client)
   end

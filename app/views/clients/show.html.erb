@@ -3,6 +3,7 @@
     <div class="col-lg-8" style="float:left">  
   		<h1> <%= @client.first_name %> </h1>
     </div>
+
     <div class="col-lg-8" style="float:left">
         <label class="control-label">Add a new note</label>
         <%= form_for [@client, Note.new] do |f| %>

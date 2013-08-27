@@ -2,6 +2,8 @@ class FollowUpsController < ApplicationController
 
   before_action :require_current_user
 
+  respond_to :json
+
   def index
     @follow_ups = FollowUp.all
   end
@@ -31,6 +33,12 @@ class FollowUpsController < ApplicationController
   end
 
   def show
+  end
+
+  def complete
+    task = FollowUp.find(params[:id])
+    
+    respond_with task
   end
 
   private
