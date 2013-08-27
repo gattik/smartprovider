@@ -27,7 +27,6 @@ GEM
       tzinfo (~> 0.3.37)
     arel (4.0.0)
     atomic (1.1.13)
-
     avatar (0.2.0)
     bcrypt-ruby (3.0.1)
     builder (3.1.4)
@@ -116,10 +115,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-<<<<<<< HEAD
-  avatar
-=======
->>>>>>> 8c3b3ec704abb6232a8f3635e6ff04041b45ecbe
   bcrypt-ruby (~> 3.0.0)
   carrierwave
   coffee-rails (~> 4.0.0)
