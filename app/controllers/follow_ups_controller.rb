@@ -37,6 +37,7 @@ class FollowUpsController < ApplicationController
 
   def complete
     task = FollowUp.find(params[:id])
+    
     respond_with task
   end
 

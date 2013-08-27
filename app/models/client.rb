@@ -17,9 +17,11 @@ class Client < ActiveRecord::Base
     "#{self.street}, #{self.city}, #{self.province}"
   end
 
-  def gmaps4rails_infowindow
-    "<img src=\"#{self.image}\"> #{self.first_name}"
+  def full_name
+    "#{self.first_name} #{self.last_name}"
   end
 
-
+  def gmaps4rails_infowindow
+    "#{self.full_name}"
+  end
 end
