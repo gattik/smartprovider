@@ -13,7 +13,7 @@
 		</li>
 	</ul>
   <div class="navbar-form pull-right">
-    
-    <%= button_to 'Logout', logout_path, method: :get, class: "btn pull-right btn-small btn-primary" %>
+    Signed in as: <%= image_tag avatar_url(@current_user) %> <%= link_to "#{@current_user.first_name} #{@current_user.last_name}", user_path(@current_user)%>
+    <%= button_to 'Logout', logout_path, method: :get, class: "btn pull-right btn-primary" %>
   </div>
 </div>
