@@ -1,13 +1,10 @@
-<div class="container"> <%= gmaps4rails(@json) %> </div>
-<div class="container">
+<div class="container"> <%= gmaps4rails(@json) %>
   <div class="row">
-    <div class="col-lg-9" style="float:left">  
+    <div class="col-lg-8" style="float:left">  
   		<h1> <%= @client.first_name %> </h1>
     </div>
-  	<%= render "layouts/client_dashboard" %>  
-    <div class="col-lg-9" style="float:left">
-      <h3>Notes</h3>
-        <label class="control-label">Add a new note:</label>
+    <div class="col-lg-8" style="float:left">
+        <label class="control-label">Add a new note</label>
         <%= form_for [@client, Note.new] do |f| %>
 				<div style="width: 200px"> Title <br> <%= f.text_field :title, class: 'txtfield'%></div>
 			  <div> Description <br> <%= f.text_area :description, rows: 4, cols: 80, class: 'textarea' %></div> <br>
@@ -56,17 +53,25 @@
 							<% end %>
 					</tbody>
 	      </table>
-		</div>
+				<div><h4>Vitals</h4>
+					<label class="control-label well"><h4>Add new vitals:</h4>
+					<% if flash[:notice] %>
+						<span class="label label-success">
+					  	<%= flash[:notice] %>
+					  </span>
+					<% elsif flash[:error] %>
+						<span class="label label-danger">
+					  	<%= flash[:error] %>
+					  </span>
+					<% end %>
+
+					<%= render 'vitals/form' %>
+		    </div>
+		  </div>
 			<%= render 'clients/client_info' %> 
 			<br>   
   </div>
 </div>
-
-
-<script>
-  $('.nav a:contains("Notes")').parent().addClass('active');
-</script>
-
 
 
 <%= yield :scripts %>

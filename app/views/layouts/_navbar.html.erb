@@ -3,13 +3,13 @@
     <li class="navbar-brand" style="padding-left: 40px;
     padding-right: 40px;">SmartProvider</li> 
 	  <li>
-      <%= link_to raw('<i class="glyphicon glyphicon-list-alt">Glance</i>'), notes_path, class: "btn btn-default btn-lg" %>
+      <%= link_to raw('<i class="glyphicon glyphicon-list-alt"> Glance</i>'), users_path, class: "btn btn-inverse btn-lg" %>
 		</li>
 		<li>
-      <%= link_to raw('<i class="glyphicon glyphicon-user"><sp>Clients</i>'), clients_path, class: "btn btn-default btn-lg" %>
+      <%= link_to raw('<i class="glyphicon glyphicon-user"> Clients</i>'), clients_path, class: "btn btn-inverse btn-lg" %>
 		</li>
 		<li>
-      <%= link_to raw('<i class="glyphicon glyphicon-folder-open">Account</i>'), user_path(@current_user), class: "btn btn-default btn-lg" %>
+      <%= link_to raw('<i class="glyphicon glyphicon-folder-open"> Account</i>'), user_path(@current_user), class: "btn btn-inverse btn-lg" %>
 		</li>
 	</ul>
   <div class="navbar-form pull-right">
