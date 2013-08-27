@@ -8,8 +8,8 @@
       <h3>Notes</h3>
         <label class="control-label">Add a new note:</label>
         <%= form_for [@client, Note.new] do |f| %>
-				<div> Title: <br> <%= f.text_field :title%></div>
-			  <div> Description: <br> <%= f.text_area :description, rows: 4, cols: 80 %></div> <br>
+				<div style="width: 200px"> Title <br> <%= f.text_field :title, class: 'txtfield'%></div>
+			  <div> Description <br> <%= f.text_area :description, rows: 4, cols: 80, class: 'textarea' %></div> <br>
 			   <%= f.submit "Add Note", class: "btn btn-small btn-primary" %>
 			<% end %>
       <br>

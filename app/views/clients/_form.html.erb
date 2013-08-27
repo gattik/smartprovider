@@ -1,31 +1,58 @@
 <div class="container" >
-	<h1>New Client</h1>
-	<%= simple_form_for @client, html: {multipart: true} do |f| %>
-	<%= f.error_notification %>
-  <%= f.input :first_name %>
-  <%= f.input :last_name %>
-  <%= f.input :date_of_birth, :as => :date, :start_year => Date.today.year,:end_year => 1900,:order => [ :day, :month, :year], :required => true %>
- 	<%= f.input :gender, collection: ["Male", "Female"] %>
-  <%= f.input :hcn,hint: "e.g. 1234567890GH",label: "Health Card" %>
-  <%= f.input :physician %>
-  <%= f.input :physician_phone %>
-  <br>
-  <%= f.input :diagnosis %>
-  <%= f.input :advanced_directives %>
-  <%= f.input :street %>
-  <%= f.input :city %>
-  <%= f.input :province %>
-  <%= f.input :contact_name %>
-  <%= f.input :contact_relationship %>
-  <br>
-  <%= f.input :contact_phone %>
-  <%= f.input :image %>
-  <%= f.error :base %>
-  <br>
-  <%= f.button :submit, class: "btn btn-success"%>
-  <br>
-  <br>
+  <h1>New Client</h1>
+  <div class="span6">
+  <%= form_for @client, html: {multipart: true} do |f| %>
+  <%= f.error_messages %>
 
-	<% end %>
-</div>
-<hr>
+  <div>First Name 
+    <br>
+    <%= f.text_field :first_name %></div>
+  <div>Last Name
+    <br>
+    <%= f.text_field :last_name %></div>
+  <div>Date of Birth
+    <br>
+    <%= f.date_select :date_of_birth, start_year: 1900, end_year: 2013 %></div>
+  <div>Gender: 
+    <br>
+    <%=  f.select(:gender,[['Male', 'Male'], ['Female', 'Female']]) %></div>
+  <div>Health Card Number (ten numbers and two letter verification code)
+    <br>
+    <%= f.text_field :hcn %></div>
+  <div>Physician 
+    <br>
+    <%= f.text_field :physician %></div>
+  <div>Physician Phone 
+    <br>
+    <%= f.text_field :physician_phone %></div>
+  <div>Diagnosis Information 
+    <br>
+    <%= f.text_area :diagnosis %></div>
+  <div>Advanced Directives
+    <br>
+    <%= f.text_area :advanced_directives %></div>
+  <div>Street Address 
+    <br>
+    <%= f.text_field :street %></div> 
+  <div>City
+    <br>
+    <%= f.text_field :city %></div>
+  <div>Province
+    <br>
+    <%= f.text_field :province %></div>
+  <div>Contact Name 
+    <br>
+    <%= f.text_field :contact_name %></div>
+  <div>Contact Relationship 
+    <br>
+    <%= f.text_field :contact_relationship %></div>
+  <div>Contact Phone 
+    <br>
+    <%= f.text_field :contact_phone %></div>
+    <br>
+  <div>Upload Image 
+    <br>
+    <%= f.file_field :image %></div>
+    <br>
+  <div><%= f.submit "Save", class: "btn btn-primary" %></div>
+<% end %>
