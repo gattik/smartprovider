@@ -12,9 +12,14 @@
     <p>
       SmartProvider is here to help you
     </p>
-    <%= form_for @user, url: login_path do |f| %>
-    <%= flash[:error] %>
+    
+    <% if flash[:error] %>
+      <h2><span class="label label-danger">
+        <%= flash[:error] %>
+      </span></h2>
+    <% end %>
 
+    <%= form_for @user, url: login_path do |f| %>
     <div>
       <%= f.label :email %>
       <br>

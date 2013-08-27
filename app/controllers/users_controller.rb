@@ -15,8 +15,10 @@ class UsersController < ApplicationController
   	@user = User.new(user_params)
   	if @user.save
       UserMailer.welcome_email(@user).deliver
+      flash[:notice] = "Account successfully created!"
       redirect_to login_path
     else
+      flash[:error] = "Invalid parameters."
       render action: :new
     end
   end

@@ -7,9 +7,13 @@
       <label class="control-label well"><h4>Add new vitals:</h4>
 
 <% if flash[:notice] %>
-  <p><%= flash[:notice] %></p>
-<% else %>
-  <p><%= flash[:error] %></p>
+	<span class="label label-success">
+  	<%= flash[:notice] %>
+  </span>
+<% elsif flash[:error] %>
+	<span class="label label-danger">
+  	<%= flash[:error] %>
+  </span>
 <% end %>
 
 <%= render 'form' %>
