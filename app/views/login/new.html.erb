@@ -5,7 +5,7 @@
     </h3>
   </div>
   <hr>
-  <div class="well">
+  <center><div class="well" style="width: 300px">
     <h2>
       Welcome back!
     </h2>
@@ -20,21 +20,25 @@
     <% end %>
 
     <%= form_for @user, url: login_path do |f| %>
-    <div>
+    <div style="float:left;">
       <%= f.label :email %>
+    </div>
       <br>
+    <div>
       <%= f.text_field :email, class: 'txtfield'%>
     </div>
-    <div>
+    <div style="float:left;">
       <%= f.label :password %>
+    </div>
       <br>
+    <div>
       <%= f.password_field :password, class: 'txtfield' %>
     </div>
     <br>
     <div><%= f.submit "Login", class: "btn btn-primary" %>
     </div>
     <% end %>
-  </div>
+  </div></center>
   <div class="row-fluid marketing">
   </div>
   <hr>

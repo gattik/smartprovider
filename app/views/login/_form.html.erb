@@ -1,13 +1,14 @@
+
 <%= form_for @user, url: login_path do |f| %>
   <%= flash[:error] %>
 
-  <div>
+  <div style="width: 50px">
     <%= f.label :email %>
     <br>
     <%= f.text_field :email %>
   </div>
 
-  <div>
+  <div style="width: 50px">
     <%= f.label :password %>
     <br>
     <%= f.password_field :password %>
