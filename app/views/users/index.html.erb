@@ -1,8 +1,13 @@
 <div class="container">
   <%= gmaps4rails(@json) %>
   <h1>Latest Activity</h1>
+  <%= render "layouts/client_dashboard" %>
+  <hr>
+  <br /> <br />
+
   <div class="row">    
     <div class="col-lg-8" style="float:left;">
+      
       <table class="table" >
         <p>What is going on with my clients</p>
         <h3>Notes</h3>
@@ -49,7 +54,7 @@
 <br>
 
 <script>
-  $('.sidebar a:contains("Glance")').parent().addClass('active');
+  $('.nav a:contains("Feed")').parent().addClass('active');
 </script>
 
 <%= yield :scripts %>
