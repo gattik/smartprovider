@@ -13,5 +13,6 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :email
   validates :email, format: { with: /(\w[-._\w]*\w@\w[-._\w]*\w\.\w{2,3})/ }
   validates_uniqueness_of :username
+  #validates :phone, format: { with: /[0-9]{10}/ }
 
 end

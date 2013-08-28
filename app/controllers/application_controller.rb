@@ -13,4 +13,9 @@ class ApplicationController < ActionController::Base
   	set_current_user
   	redirect_to root_path unless @current_user
   end
+
+  def current_user_clients_gmaps
+    @user_clients = @current_user.clients.to_gmaps4rails
+  end
+
 end
