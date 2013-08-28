@@ -9,9 +9,9 @@
   -moz-box-shadow: rgba(64, 64, 64, 0.5) 0 2px 5px;
   box-shadow: rgba(64, 64, 64, 0.1) 0 2px 5px;
   border: px solid;
-  -webkit-border-radius: 15px;
-  -moz-border-radius: 15px;
-  border-radius: 15px;
+  -webkit-border-radius: 15px 15px 0px 0px;
+  -moz-border-radius: 15px 15px 0px 0px;
+  border-radius: 15px 15px 0px 0px;
 }
 
 .gmaps4rails_map {

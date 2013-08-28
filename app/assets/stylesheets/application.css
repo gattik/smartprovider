@@ -28,6 +28,11 @@
 	border: 2px solid #fff;
 	box-shadow: 1px 1px 2px 2px #888;
 }
+.img_container {
+	border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+}
 
 #profile_button {
 	font-family: Helvetica; 
