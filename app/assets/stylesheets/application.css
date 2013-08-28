@@ -28,3 +28,12 @@
 	border: 2px solid #fff;
 	box-shadow: 1px 1px 2px 2px #888;
 }
+
+#profile_button {
+	font-family: Helvetica; 
+	font-weight: 10; 
+}
+
+#profile_button a:link, a:visited {
+	color: #999999;
+}

@@ -4,6 +4,7 @@ class ClientsController < ApplicationController
 
 	def index
 		@clients = Client.all 
+		@user_clients = @current_user.clients.to_gmaps4rails
 	end
 
 	def new
