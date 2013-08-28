@@ -14,6 +14,8 @@
     <%= button_to 'Logout', logout_path, method: :get, class: "btn pull-right btn-primary" %>
   </div>
   <div class="navbar-form pull-right" style="display: inline-block">
+  <% if @current_user %>
   <%= image_tag avatar_url(@current_user), size: "30" %> <%= link_to "#{@current_user.first_name} #{@current_user.last_name}", user_path(@current_user), class: "btn btn-inverse btn-lg", style: "color: #999999;" %>
+  <% end %>
 </div>
 </div>
