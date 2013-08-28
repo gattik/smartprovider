@@ -8,7 +8,7 @@ users_username = ["freddyrangel", "ronaldvictorino", "kathleengatti"]
     first_name: users_first_names[i],
     last_name: users_last_names[i],
     designation: "Nurse",
-    phone: "555-555-5555",
+    phone: "5555555555",
     email: users_emails[i],
     password: "12345678",  
     password_confirmation: "12345678", 
