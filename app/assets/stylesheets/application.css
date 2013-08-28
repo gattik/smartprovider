@@ -39,6 +39,10 @@
 	font-weight: 10; 
 }
 
-#profile_button a:link, a:visited {
+/*#profile_button > a {
 	color: #999999;
 }
+
+#profile_button a:visited {
+	color:#999999;
+}*/

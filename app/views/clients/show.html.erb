@@ -1,7 +1,7 @@
 <div class="container"> <%= gmaps4rails(@json) %>
   <div class="row">
     <div class="col-lg-8" style="float:left">  
-  		<h1> <%= @client.first_name %> </h1>
+  		<h1> <%= "#{@client.first_name} #{@client.last_name}" %> </h1>
     </div>
 
     <div class="col-lg-8" style="float:left">
@@ -42,14 +42,18 @@
 							<td><b>Click to complete!<b></td>
 						</tr>
 							<% @client.notes.each do |note| %>
-							<% note.follow_ups.each do |follow_up| %>
+							<% note.follow_ups.reverse.each do |follow_up| %>
 						<tr>
 							<td><%= follow_up.task %></td>
 							<td><%= link_to follow_up.note.title, client_note_path(follow_up.note.client_id, follow_up.note_id) %></td>
 							<td><%= follow_up.created_at.strftime("%m/%d/%Y") %></td>
-							<td><%= follow_up.completed %></td>
-							<td><%= link_to "Click to complete task", follow_up_path(follow_up, follow_up: { completed: true }), method: :patch %></td>
-						</tr>
+							<% if follow_up.completed %>
+              <td><span class="glyphicon glyphicon-check" style="color: green; margin-left:30px;"></span></td>
+            <% else %>
+              <td><span class="glyphicon glyphicon-unchecked" style="color: red; margin-left:30px;"></span></td>
+             <% end %>
+							<td><%= follow_up.created_at.strftime("%m/%d/%Y at %I:%M%p") %></td>
+						</tr>						
 							<% end %>
 							<% end %>
 					</tbody>

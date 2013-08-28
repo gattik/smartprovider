@@ -1,8 +1,11 @@
 <div class="container" >
+	 <div class="map_container" style="background-image:url('<%= asset_path "about.jpg" %>'); height:300px; background-size:100%;">
+  </div>
   		<center><h1>About</h1></center>
   		<hr>
-	<div class="row">
-	  <div class="col-lg-3" style="float:left"> 
+	<div class="row"><center>
+	  <div class="col-lg-3 well" style="float:left;"> 
+	  	<%= image_tag avatar_url(@current_user) %> 
 	    <h1> <%= @user.first_name %> </h1>
 		  <p>First Name: <%= @current_user.first_name %></p>
 			<p>Last Name: <%= @current_user.last_name %></p>
@@ -10,8 +13,8 @@
 			<p>Phone: <%= @current_user.phone %></p>
 			<p>Email: <%= @current_user.email %></p>
 			<%= button_to 'Edit', edit_user_path(@current_user), method: :get, class: "btn btn-success btn-small" %> <br>
-		</div>
-		<div class="col-lg-9 well" style="float:left"> 
+		</div></center>
+		<div class="col-lg-8" style="float:right;"> 
     	<h3>My Recent Activities</h3>
       <h4>Notes</h4>
 			<table class="table">

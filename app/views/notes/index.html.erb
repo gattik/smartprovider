@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="map_container" style="background-image:url('<%= asset_path "tablet.jpg" %>'); height:300px; background-size:100%;">
+  <div class="map_container" style="background-image:url('<%= asset_path "stethoscope.jpg" %>'); height:300px; background-size:100%;">
   </div>
   <h1>Latest Notes</h1>
  	<%= render "layouts/client_dashboard" %>
@@ -36,6 +36,7 @@
               <tr data-task-id="<%= follow_up.id %>">
                 <td class="complete-task">
                   <a href="#"><span class="glyphicon glyphicon-check" style="margin-right: 5px;"></span></a> <%= follow_up.task %></td>
+                <td style="font-size: 12px;"> <%= "#{follow_up.note.client.first_name} #{follow_up.note.client.last_name}" %></td>
               </tr>
             <% end %>
           <% end %>
