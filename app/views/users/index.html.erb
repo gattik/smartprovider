@@ -17,8 +17,8 @@
             <td><b>Note<b></td>
             <td><b>Date<b></td>
           </tr>
-            <% @current_user.clients.each do |client| %>
-            <% client.notes.each do |note| %>
+            <% @current_user.clients.reverse.each do |client| %>
+            <% client.notes.reverse.each do |note| %>
           <tr>
             <td><%= link_to note.client.first_name, client_path(note.client) %></td>
             <td><%= note.title %></td>
@@ -34,15 +34,13 @@
       <h4>My Follow-ups</h4>
       <table class="table">
         <tbody>
-          <tr>
-            <td><b>Task<b></td>
-            <td><b>Complete<b></td>
-          </tr>
-            <% @current_user.follow_ups.each do |follow_up| %>
-          <tr data-task-id="<%= follow_up.id %>">
-            <td class="complete-task">Click</td>
-            <td><%= follow_up.task %></td>
-          </tr>
+          <% @current_user.follow_ups.reverse.each do |follow_up| %>
+            <% if follow_up.completed == false %>
+              <tr data-task-id="<%= follow_up.id %>">
+                <td class="complete-task">
+                  <a href="#"><span class="glyphicon glyphicon-check" style="margin-right: 5px;"></span></a> <%= follow_up.task %></td>
+              </tr>
+            <% end %>
           <% end %>
         </tbody>
       </table>

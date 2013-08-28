@@ -8,8 +8,8 @@
 
   <div class="row"> 
    <div class="col-lg-8" style="float:left;">
-		<% @current_user.clients.each do |client| %>
-		<% client.notes.each do |note| %>    
+		<% @current_user.clients.reverse.each do |client| %>
+		<% client.notes.reverse.each do |note| %>    
 				<div class="photo">
 					<%= image_tag client.image %>
 				</div>
@@ -31,19 +31,18 @@
       <h4>My Follow-ups</h4>
       <table class="table">
         <tbody>
-          <tr>
-            <td><b>Task<b></td>
-            <td><b>Complete<b></td>
-          </tr>
-            <% @current_user.follow_ups.each do |follow_up| %>
-          <tr>
-            <td><%= follow_up.task %></td>
-            <td><%= link_to "Click to complete task", follow_up_path(follow_up, follow_up: { completed: true }), method: :patch %></td>
-          </tr>
+          <% @current_user.follow_ups.reverse.each do |follow_up| %>
+            <% if follow_up.completed == false %>
+              <tr data-task-id="<%= follow_up.id %>">
+                <td class="complete-task">
+                  <a href="#"><span class="glyphicon glyphicon-check" style="margin-right: 5px;"></span></a> <%= follow_up.task %></td>
+              </tr>
+            <% end %>
           <% end %>
         </tbody>
       </table>
-    </div>  
+    </div>
+
   </div>  
 </div>
 <br>
