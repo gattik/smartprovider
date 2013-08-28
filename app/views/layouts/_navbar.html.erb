@@ -8,12 +8,12 @@
 		<li>
       <%= link_to raw('<i class="glyphicon glyphicon-user"> Clients</i>'), clients_path, class: "btn btn-inverse btn-lg" %>
 		</li>
-		<li>
-      <%= link_to raw('<i class="glyphicon glyphicon-folder-open"> Account</i>'), user_path(@current_user), class: "btn btn-inverse btn-lg" %>
-		</li>
 	</ul>
+
   <div class="navbar-form pull-right">
-    Signed in as: <%= image_tag avatar_url(@current_user) %> <%= link_to "#{@current_user.first_name} #{@current_user.last_name}", user_path(@current_user)%>
     <%= button_to 'Logout', logout_path, method: :get, class: "btn pull-right btn-primary" %>
   </div>
+  <div class="navbar-form pull-right" style="display: inline-block">
+  <%= image_tag avatar_url(@current_user) %> <%= link_to "#{@current_user.first_name} #{@current_user.last_name}", user_path(@current_user), class: "btn btn-inverse btn-lg", id:"#profile_button" %>
+</div>
 </div>
