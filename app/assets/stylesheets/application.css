@@ -81,7 +81,8 @@ input#query {
 }
 
 .search-query:focus + button {
-  z-index: 3;   
+  z-index: 3;
+}
 
 .lightbox-bg {
    position: absolute;
@@ -90,15 +91,26 @@ input#query {
    width: 100%;
    height: 100%;
    background: rgba(0, 0, 0, 0.5);
+   display: none;
 }
 
 .lightbox-box {
 	position: absolute;
 	background-color: white;
 	box-shadow: 0px 0px 20px #000;
+	display: none;
 }
 
-.hide {
-	display: none;
+#welcome-page {
+	position:absolute;
+	margin-left:-100px;
+	margin-top:-100px;
+	background-image:url('welcome.jpg');
+	background-size:100%;
+	height:700px;
+	width:105%;
+}
 
+#welcome-content {
+	margin-left:0px;
 }
