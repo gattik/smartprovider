@@ -35,7 +35,7 @@ end
 # Use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'
 
-gem 'dynamic_form'
+# gem 'dynamic_form'
 
 gem 'carrierwave'
 
