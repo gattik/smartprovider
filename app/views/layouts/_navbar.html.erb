@@ -8,11 +8,8 @@
 		<li>
       <%= link_to raw('<i class="glyphicon glyphicon-user"> Clients</i>'), clients_path, class: "btn btn-inverse btn-lg" %>
 		</li>
-	</ul>Search Clients
-<%= form_tag(search_clients_path, method: :get) do -%>
-  <%= search_field_tag :query -%>
-  <%= submit_tag "Search" %>
-<% end %>
+	</ul>
+  
   <div class="navbar-form pull-right">
     <%= button_to 'Logout', logout_path, method: :get, class: "btn pull-right btn-primary" %>
   </div>
@@ -20,5 +17,11 @@
   <% if @current_user %>
   <%= image_tag avatar_url(@current_user), size: "30" %> <%= link_to "#{@current_user.first_name} #{@current_user.last_name}", user_path(@current_user), class: "btn btn-inverse btn-lg", style: "color: #999999;" %>
   <% end %>
-</div>
+  </div>
+  <div class="navbar-form pull-right">
+    <%= form_tag(search_clients_path, method: :get) do -%>
+      <%= search_field_tag :search -%>
+      <%= submit_tag "Search"%>
+    <% end %>
+  </div>
 </div>
