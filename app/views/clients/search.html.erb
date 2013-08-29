@@ -1,5 +1,26 @@
 <ul>
-  <% @results.each do |result| %>
-    <li><%= link_to result.full_name, client_path(result) %></li>
-  <% end %>
 </ul>
+<div class = "container"> <%= gmaps4rails(@results_gmaps) %>
+  <h1>Search Results</h1>
+  <div class="span6" style="width:70%; float:left;">
+    <% @results.each do |result| %>
+      <div class="span4">
+        <div class="photo">
+          <%= image_tag result.image %>
+        </div>
+        <div class="span3">
+          <h3><%= link_to result.full_name, client_path(result)%></h3>
+          <b>Diagnosis:</b> <%= result.diagnosis %><br />
+          <b>Advanced Directives:</b> <%= result.advanced_directives %><br />
+          <b>Contact Name:</b> <%= result.contact_name %> <br />
+          <b>Contact Phone:</b> <%= result.contact_phone %>
+          <br><br>
+          <hr>
+        </div>
+      </div>
+    <% end %> 
+  </div>
+
+  <%= button_to "New Client", new_client_path(@client), method: :get,class: "btn btn-primary btn-lg" %>
+</div>
+ 

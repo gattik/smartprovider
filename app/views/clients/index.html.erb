@@ -7,8 +7,7 @@
 					<%= image_tag client.image %>
 				</div>
 				<div class="span3">
-					<% full_name = client.first_name + " " + client.last_name %>
-					<h3><%= link_to full_name, client_path(client)%></h3>
+					<h3><%= link_to client.full_name, client_path(client)%></h3>
 					<b>Diagnosis:</b> <%= client.diagnosis %><br />
 					<b>Advanced Directives:</b> <%= client.advanced_directives %><br />
 					<b>Contact Name:</b> <%= client.contact_name %> <br />
