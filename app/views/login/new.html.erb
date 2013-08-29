@@ -14,9 +14,9 @@
     </p>
     
     <% if flash[:error] %>
-      <h2><span class="label label-danger">
+      <h3><span class="label label-danger">
         <%= flash[:error] %>
-      </span></h2>
+      </span></h3>
     <% end %>
 
     <%= form_for @user, url: login_path do |f| %>

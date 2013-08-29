@@ -3,6 +3,9 @@ Smartprovider::Application.routes.draw do
   resources :users
 
   resources :clients do
+    collection do
+      get :search
+    end
     resources :notes
     resources :vitals
     member do

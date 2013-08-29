@@ -43,6 +43,8 @@ gem 'gmaps4rails'
 
 gem 'simple_form'
 
+gem 'scoped_search'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 

@@ -11,6 +11,8 @@ class Client < ActiveRecord::Base
 
   mount_uploader :image, ImageUploader
 
+  scoped_search on: [:first_name, :last_name]
+
   acts_as_gmappable
 
   def gmaps4rails_address

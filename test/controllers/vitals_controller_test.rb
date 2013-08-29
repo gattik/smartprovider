@@ -27,7 +27,7 @@ class VitalsControllerTest < ActionController::TestCase
     vital = assigns(:vital)
     assert vital.client
     assert_equal client.id, vital.client.id
-  	assert_redirected_to client_path(vital.client)
+  	assert_redirected_to new_client_vital_path(vital.client)
   end
 
 

@@ -56,8 +56,9 @@ class ClientsController < ApplicationController
 		redirect_to clients_path
 	end
 
-	def remove_user_from_client
-	end
+  def search
+    @results = Client.search_for params[:query]
+  end
 
 	private
 
