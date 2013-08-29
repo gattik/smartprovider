@@ -4,6 +4,16 @@
   		<h1> <%= "#{@client.first_name} #{@client.last_name}" %> </h1>
     </div>
 
+    <% if flash[:notice] %>
+			<span class="label label-success">
+		  	<%= flash[:notice] %>
+		  </span>
+		<% elsif flash[:error] %>
+			<span class="label label-danger">
+		  	<%= flash[:error] %>
+		  </span>
+		<% end %>
+
     <div class="col-lg-8" style="float:left">
         <label class="control-label">Add a new note</label>
         <%= form_for [@client, Note.new] do |f| %>
@@ -58,19 +68,12 @@
 							<% end %>
 					</tbody>
 	      </table>
+				
 				<div><h4>Vitals</h4>
 					<label class="control-label well"><h4>Add new vitals:</h4>
-					<% if flash[:notice] %>
-						<span class="label label-success">
-					  	<%= flash[:notice] %>
-					  </span>
-					<% elsif flash[:error] %>
-						<span class="label label-danger">
-					  	<%= flash[:error] %>
-					  </span>
-					<% end %>
 
 					<%= render 'vitals/form' %>
+
 		    </div>
 		  </div>
 			<%= render 'clients/client_info' %> 

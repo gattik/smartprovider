@@ -2,7 +2,7 @@
 <div class="container">
 	<h1>My Clients</h1>
   <div class="span6" style="width:70%; float:left;">
-		<% @current_user.clients.each do |client| %>
+		<% @current_user.clients.order('first_name').each do |client| %>
 			<div class="span4">
 				<div class="photo">
 					<%= image_tag client.image %>
@@ -23,8 +23,4 @@
 
 	<%= button_to "New Client", new_client_path(@client), method: :get,class: "btn btn-primary btn-lg" %>
 </div>
-
-<script>
-  $('.nav a:contains("Clients")').parent().addClass('active');
-</script>
  

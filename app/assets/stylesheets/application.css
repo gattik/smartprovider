@@ -46,3 +46,22 @@
 #profile_button a:visited {
 	color:#999999;
 }*/
+
+.lightbox-bg {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background: rgba(0, 0, 0, 0.5);
+}
+
+.lightbox-box {
+	position: absolute;
+	background-color: white;
+	box-shadow: 0px 0px 20px #000;
+}
+
+.hide {
+	display: none;
+}
