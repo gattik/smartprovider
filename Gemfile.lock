@@ -40,7 +40,6 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.3)
-    dynamic_form (1.1.4)
     erubis (2.7.0)
     execjs (2.0.1)
     gmaps4rails (1.5.6)
@@ -119,7 +118,6 @@ DEPENDENCIES
   bcrypt-ruby (~> 3.0.0)
   carrierwave
   coffee-rails (~> 4.0.0)
-  dynamic_form
   gmaps4rails
   jbuilder (~> 1.2)
   jquery-rails

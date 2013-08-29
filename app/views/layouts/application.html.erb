@@ -6,7 +6,6 @@
   
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
 
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= stylesheet_link_tag 'gmaps4rails' %>
   <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
   <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
@@ -20,5 +19,10 @@
 <div class="content">
   <%= yield %>
 </div>
+
+<div class="lightbox-bg hide"></div>
+<div class="lightbox-box hide"></div>
+
 <%= yield :scripts %>
 </html>
+  
