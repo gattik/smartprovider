@@ -16,6 +16,7 @@
 						<td><b>Task<b></td>
 						<td><b>Note<b></td>
 						<td><b>Client<b></td>
+            <td><b>Assigned To<b></td>
 						<td><b>Completed<b></td>
 						<td><b>Date Created<b></td>
 					</tr>
@@ -23,7 +24,8 @@
 					<tr>
 						<td><%= follow_up.task %></td>
 						<td><%= link_to follow_up.note.title, client_note_path(follow_up.note.client_id, follow_up.note_id) %></td>
-						<td><%= link_to "#{follow_up.note.client.first_name} #{follow_up.note.client.last_name}", client_path(follow_up.note.client) %></td>
+						<td><%= link_to "#{follow_up.note.client.full_name}", client_path(follow_up.note.client) %></td>
+            <td><%= link_to "#{follow_up.user.full_name}", user_path(follow_up.user) %></td>
 						<% if follow_up.completed %>
               <td><span class="glyphicon glyphicon-check" style="color: green; margin-left:30px;"></span></td>
             <% else %>
@@ -37,7 +39,8 @@
       </table>
     </div>
     <div class="col-lg-3 well" style="float:right;">
-      <h4>My Follow-ups</h4>
+      <h3 align="right"><b><%= Time.now.strftime("%m/%d/%Y") %></b></h3>
+      <h4 align="right">Today's To-Do List</h4>
       <table class="table">
         <tbody>
           <% @current_user.follow_ups.reverse.each do |follow_up| %>

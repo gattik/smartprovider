@@ -30,7 +30,8 @@
       </table>
     </div>
     <div class="col-lg-3 well" style="float:right;">
-      <h4>My Follow-ups</h4>
+      <h3 align="right"><b><%= Time.now.strftime("%m/%d/%Y") %></b></h3>
+      <h4 align="right">Today's To-Do List</h4>
       <table class="table">
         <tbody>
           <% @current_user.follow_ups.reverse.each do |follow_up| %>
