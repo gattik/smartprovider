@@ -2,6 +2,8 @@ class ClientsController < ApplicationController
 
 	before_action :require_current_user
 
+	respond_to :html, :json, :xml
+
 	def index
 		@clients = Client.all 
 		@user_clients = @current_user.clients.to_gmaps4rails
@@ -57,7 +59,8 @@ class ClientsController < ApplicationController
 	end
 
   def search
-    @results = Client.search_for params[:query]
+    @results = Client.search_for params[:search]
+    respond_with @results
   end
 
 	private

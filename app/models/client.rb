@@ -1,7 +1,6 @@
 class Client < ActiveRecord::Base
 	has_many :cases
 	has_many :users, through: :cases
-
 	has_many :notes
 	has_many :vitals
 
@@ -11,7 +10,7 @@ class Client < ActiveRecord::Base
 
   mount_uploader :image, ImageUploader
 
-  scoped_search on: [:first_name, :last_name]
+  scoped_search :on => [:first_name, :last_name]
 
   acts_as_gmappable
 

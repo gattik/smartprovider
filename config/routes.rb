@@ -4,7 +4,7 @@ Smartprovider::Application.routes.draw do
 
   resources :clients do
     collection do
-      get :search
+      get :search, to: "clients#search"
     end
     resources :notes
     resources :vitals
