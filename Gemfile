@@ -35,13 +35,15 @@ end
 # Use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'
 
-gem 'dynamic_form'
+# gem 'dynamic_form'
 
 gem 'carrierwave'
 
 gem 'gmaps4rails'
 
 gem 'simple_form'
+
+gem 'scoped_search'
 
 # Use unicorn as the app server
 # gem 'unicorn'

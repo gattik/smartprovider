@@ -18,4 +18,9 @@ class ApplicationController < ActionController::Base
     @user_clients = @current_user.clients.to_gmaps4rails
   end
 
+  # def search_clients
+  #   @results = Client.search_for params[:query]
+  #   respond_with @results
+  # end
+
 end

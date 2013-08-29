@@ -15,17 +15,17 @@
 		<% end %>
 
     <div class="col-lg-8" style="float:left">
-        <label class="control-label">Add a new note</label>
-        <%= form_for [@client, Note.new] do |f| %>
-				<div style="width: 200px"> Title <br> <%= f.text_field :title, class: 'txtfield'%></div>
-			  <div> Description <br> <%= f.text_area :description, rows: 4, cols: 80, class: 'textarea' %></div> <br>
-			   <%= f.submit "Add Note", class: "btn btn-small btn-primary" %>
-			<% end %>
+      <label class="control-label">Add a new note</label>
+      <%= form_for [@client, Note.new] do |f| %>
+			<div style="width: 200px"> Title <br> <%= f.text_field :title, class: 'txtfield'%></div>
+		  <div> Description <br> <%= f.text_area :description, rows: 4, cols: 80, class: 'textarea' %></div> <br>
+		   <%= f.submit "Add Note", class: "btn btn-small btn-primary" %>
+		   <% end %>
       <br>
       <br>
       <h4>Recent Notes</h4>
-				<table class="table" style="float:left;">
-					<tbody>
+			  <table class="table" style="float:left;">
+				  <tbody>
 					  <tr>
 							<td><b>Title<b></td>
 							<td><b>Note<b></td>
@@ -40,7 +40,7 @@
 							<% end %>
 					</tbody>
 				</table>
-			<hr>
+		  <hr>
 			<h4>Recent Follow-ups</h4>
 				<table class="table" style="float:left;">
 					<tbody>
@@ -49,7 +49,7 @@
 							<td><b>Note<b></td>
 							<td><b>Date Created<b></td>
 							<td><b>Completed<b></td>
-							<td><b>Click to complete!<b></td>
+							<td><b>Date Completed<b></td>
 						</tr>
 							<% @client.notes.each do |note| %>
 							<% note.follow_ups.reverse.each do |follow_up| %>
@@ -75,7 +75,43 @@
 					<%= render 'vitals/form' %>
 
 		    </div>
+
+		    <div class="row-fluid">
+				  <div class="span6" style="width:60%; float:left;">
+					  <h3>Vitals</h3>
+				    <table class="table" style="width:100%; float:left;">
+					    <tbody>
+								<tr>
+									<td><b>Weight<b></td>
+									<td><b>Height<b></td>
+									<td><b>Systolic (mmHg)<b></td>
+									<td><b>Diastolic (mmHg)<b></td>
+									<td><b>Heart Beats/Min<b></td>
+									<td><b>Blood Sugar<b></td>
+									<td><b>Breaths/Min<b></td>
+									<td><b>Temperature<b></td>
+									<td><b>Date<b></td>
+								</tr>
+								<% @client.vitals.each do |vital| %>
+								<tr>
+									<td><%= vital.weight %></td>
+									<td><%= vital.height %></td>
+									<td><%= vital.systolic %></td>
+									<td><%= vital.diastolic %></td>
+									<td><%= vital.beats %> </td>
+									<td><%= vital.blood_sugar %></td>
+									<td><%= vital.breaths %></td>
+									<td><%= vital.temperature %> </td>
+									<td><%= vital.created_at.strftime("%m/%d/%Y") %></td>
+								</tr>
+								<% end %>
+					    </tbody>
+				    </table>
+			    </div>
+			  </div>
 		  </div>
+		  <br />
+		  <br />
 			<%= render 'clients/client_info' %> 
 			<br>   
   </div>
