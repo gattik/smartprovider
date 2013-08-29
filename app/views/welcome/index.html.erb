@@ -11,19 +11,27 @@
 				<p class="lead">
 					Helping Nurses with Home Care
 				</p>
-				<%= button_to 'Create an Account', new_user_path, method: :get, class: "btn btn-large btn-success" %>
+				<button class="btn btn-large btn-success" id="create-new-account">Create an Account</button>
 			<br />
 			<br />
 			<br />
+			<p>Already have an account? <a href="#" id="login-account">Log In</a></p>
 			</div>
-			<br />
-			<br />
-			<br />
 			<div class="footer">
+				<br />
 				<p>
 					© SmartProvider 2013
 				</p>
 			</div>
 		</div>
 
+</div>
+
+<div class="lightbox-bg"></div>
+<div class="lightbox-box1">
+	<%= render 'users/form' %>
+</div>
+
+<div class="lightbox-box2">
+	<%= render 'login/form' %>
 </div>
