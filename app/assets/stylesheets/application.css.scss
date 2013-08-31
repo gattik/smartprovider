@@ -1,0 +1,265 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+
+ .txtfield { 
+  display: block;
+  width: 100%;
+  padding: 5px 4px;
+  margin-bottom: 5px;
+  font-family: 'Helvetica Neue', Helvetica, Verdana, sans-serif;
+  color: #7988a3;
+  font-size: 1em;
+  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.8);
+  background-color: #fff;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#edf3f9), to(#fff));
+  background-image: -webkit-linear-gradient(top, #edf3f9, #fff);
+  background-image: -moz-linear-gradient(top, #edf3f9, #fff);
+  background-image: -ms-linear-gradient(top, #edf3f9, #fff);
+  background-image: -o-linear-gradient(top, #edf3f9, #fff);
+  background-image: linear-gradient(top, #edf3f9, #fff);
+  border: 1px solid;
+  border-color: #abbce8 #c3cae0 #b9c8ef;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25), 0 1px rgba(255, 255, 255, 0.4);
+  -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25), 0 1px rgba(255, 255, 255, 0.4);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25), 0 1px rgba(255, 255, 255, 0.4);
+  -webkit-transition: all 0.25s linear;
+  -moz-transition: all 0.25s linear;
+  transition: all 0.25s linear;
+}
+ 
+.txtfield:focus {
+  outline: none;
+  color: #525864;
+  border-color: #84c0ee;
+  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.15), 0 0 7px #96c7ec;
+  -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.15), 0 0 7px #96c7ec;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.15), 0 0 7px #96c7ec;
+}
+
+
+.content {
+	margin-top: 100px;
+}
+
+.photo {
+	float: left;
+	margin-right: 20px;
+}
+
+.photo img {
+	width: 91px;
+	height: 120px;
+	border-radius: 10px;
+	border: 2px solid #fff;
+	box-shadow: 1px 1px 2px 2px #888;
+}
+.img_container {
+	border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+}
+
+#profile_button {
+	font-family: Helvetica; 
+	font-weight: 10; 
+}
+
+/*#profile_button > a {
+	color: #999999;
+}
+
+#profile_button a:visited {
+	color:#999999;
+}*/
+
+.input-append button.add-on {
+    border: 0;
+	  background: none;
+	  /** belows styles are working good */
+	  padding: 2px 5px;
+	  margin-top: 2px;
+	  position: relative;
+	  left: -28px;
+	  /* IE7-8 doesn't have border-radius, so don't indent the padding */
+	  margin-bottom: 0;
+	  -webkit-border-radius: 3px;
+	  -moz-border-radius: 3px;
+	  border-radius: 3px;
+}
+
+input#query {
+	border: none;
+	icon: search;
+	margin:0;
+  margin-top: 5px;
+  padding: 0;
+  padding-right: 3px;
+  padding-right: 4px \9;
+	padding-left: 3px;
+	padding-left: 4px \9;
+	/* IE7-8 doesn't have border-radius, so don't indent the padding */
+
+	margin-bottom: 0;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.search-query:focus + button {
+  z-index: 3;
+}
+
+.lightbox-bg {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 120%;
+   background: rgba(0, 0, 0, 0.5);
+   display: none;
+}
+
+.lightbox-box1, .lightbox-box2 {
+	padding: 20px;
+	position: absolute;
+	top: 10px;
+	left: 625px;
+	width: 300px;
+	background-color: white;
+	box-shadow: 0px 0px 20px #000;
+	display: none;
+}
+
+#create-new-account {
+}
+
+#login-account {
+}
+
+
+#welcome-page {
+	position:absolute;
+	margin-left:-100px;
+	margin-top:-100px;
+	background-image:url(asset-path('welcome.jpg'));
+	background-size:100%;
+	height:700px;
+	width:105%;
+}
+
+#welcome-content {
+	margin-left:100px;
+}
+
+.view {
+    float: left;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    box-shadow: 1px 1px 2px #e6e6e6;
+    background-size:100%;
+    border: 10px solid #fff;
+    border-radius: 0px;
+}
+.view .mask, .view .content {
+    width: 100%;
+    height:100%;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+
+}
+.view img {
+    display: block;
+    position: relative;
+}
+.view h2 {
+    text-transform: uppercase;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    font-size: 20px;
+    font-family: Helvetica, Helvetica Neue;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.8);
+    margin: 20px 0 0 0
+}
+.view p {
+    font-size: 14px;
+    position: relative;
+    color: #000;
+    padding: 10px 20px 20px;
+    text-align: center;
+}
+.view a {
+    display: inline-block;
+    color:#fff;
+}
+
+.view-first img { 
+    -webkit-transition: all 0.2s linear;
+}
+
+.view-first:hover img { 
+    -webkit-transform: scale(1.1);
+} 
+
+.view-first .mask {
+    opacity: 0;
+    background-color: rgba(255,255,255, 0.7); 
+    -webkit-transition: all 0.4s ease-in-out;
+}
+.view-first h2 {
+    -webkit-transform: translateY(-100px);
+    opacity: 0;
+    -webkit-transition: all 0.2s ease-in-out;
+}
+.view-first p { 
+    -webkit-transform: translateY(100px);
+    opacity: 0;
+    -webkit-transition: all 0.2s linear;
+}
+.view-first a{
+    opacity: 0;
+    -webkit-transition: all 0.2s ease-in-out;
+}
+.view-first:hover .mask { 
+    opacity: 1;
+}
+.view-first:hover h2,
+.view-first:hover p,
+.view-first:hover a {
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+}
+.view-first:hover h1 {
+    opacity: 0;
+    -webkit-transform: translateY(100px);
+    -webkit-transition: all 0.2s ease-in-out;
+}
+.view-first:hover p {
+    -webkit-transition-delay: 0.1s;
+}
+.view-first:hover a {
+    -webkit-transition-delay: 0.2s;
+}
+
+.form-format {
+    text-align:right; 
+    margin-right: 50px;
+}

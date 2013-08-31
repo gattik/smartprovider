@@ -45,6 +45,11 @@ gem 'simple_form'
 
 gem 'scoped_search'
 
+group :production do
+	gem 'pg'
+	gem 'rails_12factor'
+end
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
