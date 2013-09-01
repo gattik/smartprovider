@@ -35,5 +35,7 @@ Smartprovider::Application.routes.draw do
   post '/login', to: 'login#create'
   get '/logout', to: 'login#logout'
 
+  get '/about', to: 'welcome#about'
+
   root 'welcome#index'
 end
