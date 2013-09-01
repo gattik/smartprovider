@@ -1,10 +1,8 @@
 <div class="container"> <%= gmaps4rails(@json) %>
   <div class="row">
     <div class="col-lg-8" style="float:left">  
-  		<h1> <%= "#{@client.first_name} #{@client.last_name}" %> </h1>
-    </div>
-
-    <% if flash[:notice] %>
+  		<h1> <%= "#{@client.full_name}" %> </h1>
+  		    <% if flash[:notice] %>
 			<span class="label label-success">
 		  	<%= flash[:notice] %>
 		  </span>
@@ -13,7 +11,7 @@
 		  	<%= flash[:error] %>
 		  </span>
 		<% end %>
-
+    </div>
     <div class="col-lg-8" style="float:left">
       <label class="control-label">Add a new note</label>
       <%= form_for [@client, Note.new] do |f| %>
@@ -31,7 +29,7 @@
 							<td><b>Note<b></td>
 							<td><b>Date<b></td>
 						</tr>
-							<% @client.notes.each do |note| %>
+							<% @client.notes.reverse.each do |note| %>
 							<tr>
 								<td><%= link_to note.title, client_note_path(note.client_id, note.id) %></td>
 								<td style="width:400px;"><%= note.description %></td>
@@ -47,15 +45,17 @@
 					  <tr>
 							<td><b>Task<b></td>
 							<td><b>Note<b></td>
+							<td><b>User<b></td>
 							<td><b>Date Created<b></td>
 							<td><b>Completed<b></td>
 							<td><b>Date Completed<b></td>
 						</tr>
-							<% @client.notes.each do |note| %>
+							<% @client.notes.reverse.each do |note| %>
 							<% note.follow_ups.reverse.each do |follow_up| %>
 						<tr>
 							<td><%= follow_up.task %></td>
 							<td><%= link_to follow_up.note.title, client_note_path(follow_up.note.client_id, follow_up.note_id) %></td>
+							<td><%= link_to follow_up.user.full_name, user_path(follow_up.user) %></td>
 							<td><%= follow_up.created_at.strftime("%m/%d/%Y") %></td>
 							<% if follow_up.completed %>
               <td><span class="glyphicon glyphicon-check" style="color: green; margin-left:30px;"></span></td>
