@@ -11,10 +11,10 @@
 				<p class="lead">
 					Helping Nurses with Home Care
 				</p>
-				<button class="btn btn-large btn-success" id="create-new-account">Create an Account</button>
+				<%= button_to 'Create an Account', new_user_path, method: :get, class: "btn btn-large btn-success" %>
 			<br />
 			<br />
-			<p>Already have an account? <a href="#" id="login-account">Log In</a></p>
+			<p>Already have an account? <%= link_to "Log In", login_path %></p>
 			</div>
 			<div class="footer">
 				<b><center><p>
